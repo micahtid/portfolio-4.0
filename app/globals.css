@@ -1,26 +1,153 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #0A0A0A;
+  --foreground: #ffffff;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+  width: 100%;
+}
+
+@keyframes slideUpBlur {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+    filter: blur(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+main {
+  animation: slideUpBlur 0.6s ease-out;
+  @apply ml-24 max-[768px]:ml-0;
+}
+
+@layer components {
+  .header {
+    @apply text-5xl md:text-4xl sm:text-3xl max-sm:text-2xl font-bold leading-snug;
+  }
+
+  .subheading {
+    @apply text-2xl md:text-xl sm:text-lg max-sm:text-base font-semibold;
+  }
+
+  .text {
+    @apply text-xl md:text-lg sm:text-base;
+  }
+
+  .label {
+    @apply text-base md:text-sm sm:text-xs;
+  }
+
+  .card {
+    @apply relative overflow-visible rounded-lg border border-white/[8%] bg-white/[3%] hover:bg-white/[6%] transition-all duration-300 p-6 cursor-pointer;
+  }
+
+  .card-title {
+    @apply text-3xl md:text-2xl sm:text-xl max-sm:text-lg font-semibold text-white;
+  }
+
+  .card-description {
+    @apply text-lg md:text-base sm:text-sm text-white/60 truncate max-w-full;
+  }
+
+  .card-image-container {
+    @apply absolute right-0 top-1/2 -translate-y-1/2 opacity-0 scale-75 transition-all duration-500 ease-out pointer-events-none z-20 w-auto h-auto;
+  }
+
+  .card:hover .card-image-container {
+    @apply opacity-100 scale-100;
+  }
+
+  .card-image {
+    @apply object-contain rounded-lg shadow-2xl w-40 border-2 border-white/20 max-[768px]:w-32;
+    height: auto;
+    max-width: none;
+  }
+
+  /* Card hover circle */
+  .card-hover-circle {
+    @apply absolute right-0 top-1/2 -translate-y-1/2 rounded-full opacity-0 transition-all duration-500 ease-out pointer-events-none z-5;
+    width: 300px;
+    height: 300px;
+    transform: translate(100%, -50%) scale(0);
+  }
+
+  .card:hover .card-hover-circle {
+    @apply opacity-20;
+    transform: translate(50%, -50%) scale(1);
+  }
+
+  /* Chibi App Design */
+  .card-hover-app {
+    @apply absolute right-0 top-1/2 -translate-y-1/2 rounded-xl border-2 opacity-0 transition-all duration-500 ease-out pointer-events-none z-10;
+    width: 120px;
+    height: 160px;
+    transform: translate(100%, -50%) scale(0);
+    overflow: hidden;
+  }
+
+  .card:hover .card-hover-app {
+    @apply opacity-100;
+    transform: translate(50%, -50%) scale(1);
+  }
+
+  .card-app-header {
+    @apply h-8 w-full;
+  }
+
+  .card-app-content {
+    @apply flex flex-col gap-2 p-2 h-full;
+  }
+
+  .card-app-bar {
+    @apply h-3 rounded-sm flex-1;
+  }
+
+  /* Button Styles */
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 border border-white/[8%] bg-white/[3%] hover:bg-white/[6%] py-3 px-6 rounded-lg transition-all duration-200 cursor-pointer;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-4 border border-white/20 bg-white/10 hover:bg-white/20 py-3 px-6 rounded-lg transition-all duration-200 cursor-pointer;
+  }
+
+  /* Section Styles */
+  .section {
+    @apply py-24 px-12 max-[1024px]:px-10 max-[768px]:px-8 max-[640px]:px-6;
+  }
+
+  .section-container {
+    @apply mx-auto max-w-5xl;
+  }
+
+  /* Link Styles */
+  .link {
+    @apply text-white/60 hover:text-white transition-colors duration-200;
+  }
+
+  /* Input Styles */
+  .input {
+    @apply w-full px-4 py-3 rounded-lg border border-white/[8%] bg-white/[3%] text-white placeholder-white/40 focus:border-white/20 focus:outline-none transition-all duration-200;
+  }
 }
