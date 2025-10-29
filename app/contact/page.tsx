@@ -3,7 +3,7 @@ import ContactForm from '@/app/components/ContactForm';
 
 const Contact = () => {
   return (
-    <main className="pt-24">
+    <main className="h-screen max-h-screen overflow-hidden">
       <ContactForm />
     </main>
   );

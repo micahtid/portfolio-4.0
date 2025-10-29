@@ -1,53 +1,36 @@
 @import "tailwindcss";
 
-:root {
-  --background: #0A0A0A;
-  --foreground: #ffffff;
-}
-
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+  --color-background: #0A0A0A;
+  --color-foreground: #ffffff;
 }
 
-html {
-  width: 100%;
-  height: 100%;
-  overflow-x: hidden;
-  scroll-behavior: smooth;
+/* Base Styles... */
+@layer base {
+  html {
+    @apply w-full h-full overflow-x-hidden scroll-smooth;
+    -ms-overflow-style: none;
+  }
+
+  body {
+    @apply bg-background text-foreground overflow-x-hidden w-full m-0 p-0;
+    will-change: background;
+  }
+
+  /* Hide all scrollbars... */
+  ::-webkit-scrollbar {
+    @apply hidden;
+  }
+
+  /* Firefox */
+  * {
+    scrollbar-width: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  overflow-x: hidden;
-  width: 100%;
-  will-change: background;
-  margin: 0;
-  padding: 0;
-}
-
-/* Hide all scrollbars */
-::-webkit-scrollbar {
-  display: none;
-}
-
-/* Firefox */
-* {
-  scrollbar-width: none;
-}
-
-/* IE and Edge */
-html {
-  -ms-overflow-style: none;
-}
-
-* {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-/* Smooth animations for page transitions */
+/* Smooth animations for page transitions... */
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -68,7 +51,7 @@ html {
   }
 }
 
-/* Stagger animation for list items */
+/* Stagger animation for list items... */
 @keyframes fadeInUpStagger {
   from {
     opacity: 0;
@@ -80,7 +63,7 @@ html {
   }
 }
 
-/* Modal animations */
+/* Modal animations... */
 @keyframes modalFadeIn {
   from {
     opacity: 0;
@@ -101,9 +84,11 @@ html {
   }
 }
 
-main {
-  animation: fadeInUp 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
-  @apply ml-24 max-[768px]:ml-0;
+@layer base {
+  main {
+    animation: fadeInUp 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+    @apply ml-24 max-[768px]:ml-0;
+  }
 }
 
 @layer components {
@@ -144,16 +129,12 @@ main {
   }
 
   .card-image {
-    @apply object-contain rounded-lg w-40 border border-white/10 max-[768px]:w-32;
-    height: auto;
-    max-width: none;
+    @apply object-contain rounded-lg w-40 border border-white/10 max-[768px]:w-32 h-auto max-w-none;
   }
 
   /* Card hover circle */
   .card-hover-circle {
-    @apply absolute right-0 top-1/2 -translate-y-1/2 rounded-full opacity-0 transition-all duration-400 ease-out pointer-events-none z-5;
-    width: 300px;
-    height: 300px;
+    @apply absolute right-0 top-1/2 rounded-full opacity-0 transition-all duration-400 ease-out pointer-events-none z-5 w-[300px] h-[300px];
     transform: translate(100%, -50%) scale(0);
   }
 
@@ -164,12 +145,8 @@ main {
 
   /* Chibi App Design */
   .card-hover-app {
-    @apply absolute right-0 top-1/2 -translate-y-1/2 rounded-xl border opacity-0 transition-all duration-400 ease-out pointer-events-none z-10;
-    width: 120px;
-    height: 160px;
-    border-width: 1px;
+    @apply absolute right-0 top-1/2 -translate-y-1/2 rounded-xl border border-white/10 opacity-0 transition-all duration-400 ease-out pointer-events-none z-10 w-[120px] h-[160px] overflow-hidden;
     transform: translate(100%, -50%) scale(0);
-    overflow: hidden;
   }
 
   .card:hover .card-hover-app {
@@ -223,17 +200,17 @@ main {
 
   /* Icon Button Styles */
   .icon-btn {
-    @apply inline-flex items-center justify-center text-white/60 hover:text-white transition-all duration-200 cursor-pointer hover:scale-110;
+    @apply inline-flex items-center justify-center text-white/60 hover:text-white transition-all duration-200 cursor-pointer;
   }
 
   /* Icon button with background */
   .icon-btn-bg {
-    @apply inline-flex items-center justify-center w-14 h-14 rounded-lg border border-white/10 bg-white/[2%] hover:bg-white/[4%] transition-colors duration-300;
+    @apply inline-flex items-center justify-center w-14 h-14 rounded-lg border border-white/10 bg-white/[2%] hover:bg-white/[4%] transition-all duration-300;
   }
 
   /* Link-style icon button */
   .icon-link {
-    @apply inline-flex items-center justify-center text-white/60 hover:text-white/80 transition-all duration-200 cursor-pointer hover:scale-110;
+    @apply inline-flex items-center justify-center text-white/60 hover:text-white transition-all duration-200 cursor-pointer;
   }
 
   /* Stagger animation utility */
@@ -243,6 +220,6 @@ main {
 
   /* Image Slider Navigation Button */
   .slider-nav-btn {
-    @apply pointer-events-auto flex items-center justify-center rounded-full bg-black/70 hover:bg-black/90 border border-white/20 backdrop-blur-md transition-all duration-200 hover:scale-110 text-white;
+    @apply pointer-events-auto flex items-center justify-center rounded-full bg-black/70 hover:bg-black/90 border border-white/20 backdrop-blur-md transition-all duration-200 text-white;
   }
 }

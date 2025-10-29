@@ -35,6 +35,7 @@ const Memories = () => {
                             width={600}
                             height={400}
                             className="w-full h-auto object-contain rounded-lg"
+                            style={{ filter: 'blur(0.5px)' }}
                           />
                         </div>
                       ) : null}
@@ -78,6 +79,7 @@ const Memories = () => {
                             width={600}
                             height={400}
                             className="w-full h-auto object-contain rounded-lg"
+                            style={{ filter: 'blur(0.5px)' }}
                           />
                         </div>
                       ) : null}

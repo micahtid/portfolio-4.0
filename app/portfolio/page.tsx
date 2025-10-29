@@ -33,7 +33,7 @@ const PortfolioItem = ({ item, isProject }: { item: PortfolioItemType; isProject
       {/* Expand Button as Text */}
       <button
         onClick={() => setIsExpanded(!isExpanded)}
-        className="text text-white transition-colors duration-200 flex items-center gap-2 mb-10 font-medium"
+        className="text text-white transition-colors duration-200 flex items-center gap-2 mb-6 font-medium"
       >
         {isExpanded ? 'Collapse Contributions' : 'Expand Contributions'}
         <FaChevronDown
@@ -44,7 +44,7 @@ const PortfolioItem = ({ item, isProject }: { item: PortfolioItemType; isProject
 
       {/* Expanded Content */}
       {isExpanded && (
-        <div className="space-y-4 mb-6 pl-4 border-l border-white/10">
+        <div className="space-y-4 mb-12 pl-4 border-l border-white/10">
           {/* Contribution Points */}
           <div>
             <ul className="space-y-2">

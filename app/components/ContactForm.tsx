@@ -46,7 +46,7 @@ const ContactForm: React.FC = () => {
   };
 
   return (
-    <section id="contact" className="min-h-screen section flex items-center justify-center">
+    <section id="contact" className="h-full section flex items-center justify-center">
       <div className="section-container w-full">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16">
           {/* Left Column - Header and Description */}

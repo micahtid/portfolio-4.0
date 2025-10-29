@@ -111,26 +111,26 @@ export interface Memory {
 
 export const memories: Memory[] = [
   {
-    title: "Outstanding Cambridge Learner Award",
-    slug: "cambridge-learner-award",
-    description: "Recognized as an Outstanding Cambridge Learner for exceptional performance in International GCSE examinations.",
-    fullDescription: "Recognized as an Outstanding Cambridge Learner for exceptional performance in International GCSE examinations. This award recognized outstanding achievement and contribution to the school community through academic excellence and leadership.",
-    date: "May 2024"
-  },
-  {
-    title: "Coding Club",
-    slug: "coding-club",
-    description: "Founded and led a coding club where students collaborate on programming projects and share knowledge.",
-    fullDescription: "Founded and led a coding club where students collaborate on programming projects and share knowledge. The club focused on teaching practical programming skills, fostering a community of learners, and building projects that made an impact in our school.",
-    date: "September 2023"
-  },
-  {
     title: "Hack Midwest",
     slug: "hack-midwest",
     description: "Participated in Hack Midwest hackathon, building innovative solutions within a limited timeframe.",
     fullDescription: "Participated in Hack Midwest hackathon, building innovative solutions within a limited timeframe. This experience taught me the value of rapid prototyping, teamwork under pressure, and bringing creative ideas to life in just 24 hours.",
     image: "/experiences/hack_midwest_2025.png",
     date: "March 2025"
+  },
+  {
+    title: "Nebraska Startup Academy",
+    slug: "nebraska-startup-academy",
+    description: "Completed Nebraska Startup Academy program, learning entrepreneurship and business development strategies.",
+    fullDescription: "Completed Nebraska Startup Academy program, learning entrepreneurship and business development strategies. This immersive program provided hands-on experience in startup development, from ideation to pitch presentation, and connected me with experienced entrepreneurs and mentors.",
+    date: "July 2024"
+  },
+  {
+    title: "Outstanding Cambridge Learner Award",
+    slug: "cambridge-learner-award",
+    description: "Recognized as an Outstanding Cambridge Learner for exceptional performance in International GCSE examinations.",
+    fullDescription: "Recognized as an Outstanding Cambridge Learner for exceptional performance in International GCSE examinations. This award recognized outstanding achievement and contribution to the school community through academic excellence and leadership.",
+    date: "May 2024"
   },
   {
     title: "Community Concern Society",
@@ -140,11 +140,11 @@ export const memories: Memory[] = [
     date: "January 2024"
   },
   {
-    title: "Nebraska Startup Academy",
-    slug: "nebraska-startup-academy",
-    description: "Completed Nebraska Startup Academy program, learning entrepreneurship and business development strategies.",
-    fullDescription: "Completed Nebraska Startup Academy program, learning entrepreneurship and business development strategies. This immersive program provided hands-on experience in startup development, from ideation to pitch presentation, and connected me with experienced entrepreneurs and mentors.",
-    date: "July 2024"
+    title: "Coding Club",
+    slug: "coding-club",
+    description: "Founded and led a coding club where students collaborate on programming projects and share knowledge.",
+    fullDescription: "Founded and led a coding club where students collaborate on programming projects and share knowledge. The club focused on teaching practical programming skills, fostering a community of learners, and building projects that made an impact in our school.",
+    date: "September 2023"
   }
 ];
 

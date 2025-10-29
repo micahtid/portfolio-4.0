@@ -1,3 +1,4 @@
-1. Add hover effects to icons! Simply increase opacity on hover.
-2. Add more bottom margin after 'Collapse Contributions' section.
-3. Add dates to memories
+1. Both HOME and CONTACT should be a maximum of 100vh... Not more, not less. In HOME you have to take into consideration, both Hero and Footer ... Ensure the combined heights of these components do not exceed 100vh.
+2. Add hover effects to icons! Simply increase opacity on hover. In other words, they should become brighter!
+3. Add more bottom margin after 'Collapse Contributions' section ... I.e. the spacing between the Contributions and the row of buttons!
+4. Arrange the Memories by date (simply by tweaking the object storing its data!) ... Add a bit of blur to the thumbnail image of each memory ... This should be very minimal ... Perhaps 0.5px - 1px
