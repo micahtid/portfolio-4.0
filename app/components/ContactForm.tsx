@@ -12,8 +12,8 @@ const ContactForm: React.FC = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
+  const handleChange = (_e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = _e.target;
     setFormData(prev => ({
       ...prev,
       [name]: value,
@@ -53,8 +53,8 @@ const ContactForm: React.FC = () => {
           <div className="flex flex-col justify-start">
             <h2 className="header mb-6">Get In Touch</h2>
             <p className="text text-white/70 leading-relaxed">
-              Have a project in mind or want to collaborate? I'd love to hear from you.
-              Fill out the form and I'll get back to you as soon as possible.
+              Have a project in mind or want to collaborate? I&apos;d love to hear from you.
+              Fill out the form and I&apos;ll get back to you as soon as possible.
             </p>
           </div>
 

@@ -25,7 +25,7 @@ const ImageSlider: React.FC<ImageSliderProps> = ({ images, title }) => {
   };
 
   return (
-    <div className="relative w-full">
+    <div className="relative w-full min-h-[500px]">
       {/* Main Image Display */}
       <div className="relative w-full rounded-lg overflow-hidden border border-white/[8%] bg-black/20">
         <Image

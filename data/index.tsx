@@ -102,41 +102,43 @@ export const projects: Project[] = [
 
 export interface Memory {
   title: string;
-  color: string;
-  emoji: string;
+  slug: string;
   description: string;
+  fullDescription: string;
+  image?: string;
 }
 
 export const memories: Memory[] = [
   {
     title: "Outstanding Cambridge Learner Award",
-    color: "#FFD700",
-    emoji: "🏆",
-    description: "Recognized as an Outstanding Cambridge Learner for exceptional performance in International GCSE examinations."
+    slug: "cambridge-learner-award",
+    description: "Recognized as an Outstanding Cambridge Learner for exceptional performance in International GCSE examinations.",
+    fullDescription: "Recognized as an Outstanding Cambridge Learner for exceptional performance in International GCSE examinations. This award recognized outstanding achievement and contribution to the school community through academic excellence and leadership."
   },
   {
     title: "Coding Club",
-    color: "#3B82F6",
-    emoji: "💻",
-    description: "Founded and led a coding club where students collaborate on programming projects and share knowledge."
+    slug: "coding-club",
+    description: "Founded and led a coding club where students collaborate on programming projects and share knowledge.",
+    fullDescription: "Founded and led a coding club where students collaborate on programming projects and share knowledge. The club focused on teaching practical programming skills, fostering a community of learners, and building projects that made an impact in our school."
   },
   {
     title: "Hack Midwest",
-    color: "#EC4899",
-    emoji: "⚡",
-    description: "Participated in Hack Midwest hackathon, building innovative solutions within a limited timeframe."
+    slug: "hack-midwest",
+    description: "Participated in Hack Midwest hackathon, building innovative solutions within a limited timeframe.",
+    fullDescription: "Participated in Hack Midwest hackathon, building innovative solutions within a limited timeframe. This experience taught me the value of rapid prototyping, teamwork under pressure, and bringing creative ideas to life in just 24 hours.",
+    image: "/experiences/hack_midwest_2025.png"
   },
   {
     title: "Community Concern Society",
-    color: "#10B981",
-    emoji: "🤝",
-    description: "Active member of Community Concern Society, contributing to local community initiatives and social causes."
+    slug: "community-concern",
+    description: "Active member of Community Concern Society, contributing to local community initiatives and social causes.",
+    fullDescription: "Active member of Community Concern Society, contributing to local community initiatives and social causes. Through this organization, I gained valuable experience in community engagement and learned the importance of giving back to those in need."
   },
   {
     title: "Nebraska Startup Academy",
-    color: "#F97316",
-    emoji: "🚀",
-    description: "Completed Nebraska Startup Academy program, learning entrepreneurship and business development strategies."
+    slug: "nebraska-startup-academy",
+    description: "Completed Nebraska Startup Academy program, learning entrepreneurship and business development strategies.",
+    fullDescription: "Completed Nebraska Startup Academy program, learning entrepreneurship and business development strategies. This immersive program provided hands-on experience in startup development, from ideation to pitch presentation, and connected me with experienced entrepreneurs and mentors."
   }
 ];
 
@@ -180,4 +182,8 @@ export const getProjectBySlug = (slug: string): Project | undefined => {
 
 export const getExperienceBySlug = (slug: string): Experience | undefined => {
   return experiences.find(experience => experience.slug === slug);
+};
+
+export const getMemoryBySlug = (slug: string): Memory | undefined => {
+  return memories.find(memory => memory.slug === slug);
 };

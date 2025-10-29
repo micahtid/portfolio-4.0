@@ -63,14 +63,14 @@ const PortfolioItem = ({ item, isProject }: { item: PortfolioItemType; isProject
       )}
 
       {/* Icon Buttons Section */}
-      <div className="flex gap-4 items-center mt-6">
+      <div className="flex gap-6 items-center mt-6">
         {hasImages && (
           <button
             onClick={handleViewImages}
-            className="group relative flex items-center justify-center w-12 h-12 rounded-lg border border-white/10 bg-white/[2%] hover:bg-white/[4%] transition-colors duration-300 backdrop-blur-sm"
+            className="text-white/60 hover:text-white transition-colors duration-200"
             title="View Images"
           >
-            <FaImage size={18} className="text-white/60 group-hover:text-white transition-colors duration-300" />
+            <FaImage size={20} />
           </button>
         )}
         {item.appUrl && (
@@ -78,10 +78,10 @@ const PortfolioItem = ({ item, isProject }: { item: PortfolioItemType; isProject
             href={item.appUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="group relative flex items-center justify-center w-12 h-12 rounded-lg border border-white/10 bg-white/[2%] hover:bg-white/[4%] transition-colors duration-300 backdrop-blur-sm"
+            className="text-white/60 hover:text-white transition-colors duration-200"
             title="Visit Website"
           >
-            <FaGlobe size={18} className="text-white/60 group-hover:text-white transition-colors duration-300" />
+            <FaGlobe size={20} />
           </a>
         )}
         {isProject && (item as Project).repositoryUrl && (
@@ -89,10 +89,10 @@ const PortfolioItem = ({ item, isProject }: { item: PortfolioItemType; isProject
             href={(item as Project).repositoryUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="group relative flex items-center justify-center w-12 h-12 rounded-lg border border-white/10 bg-white/[2%] hover:bg-white/[4%] transition-colors duration-300 backdrop-blur-sm"
+            className="text-white/60 hover:text-white transition-colors duration-200"
             title="View Repository"
           >
-            <FaGithub size={18} className="text-white/60 group-hover:text-white transition-colors duration-300" />
+            <FaGithub size={20} />
           </a>
         )}
       </div>
@@ -103,7 +103,7 @@ const PortfolioItem = ({ item, isProject }: { item: PortfolioItemType; isProject
 
 const Portfolio = () => {
   return (
-    <main className="pt-24">
+    <main className="pt-24 pb-24">
       {/* Experience Section */}
       <section id="experience" className="section">
         <div className="section-container">

@@ -40,7 +40,7 @@ const Modal: React.FC<ModalProps> = ({
             <Dialog.Description className="mb-5 text-sm leading-normal text-white/60">
                 {description}
             </Dialog.Description>
-            <div className="">
+            <div className="min-h-[400px]">
                 {children}
             </div>
             <Dialog.Close asChild>

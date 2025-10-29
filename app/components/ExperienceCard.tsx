@@ -8,12 +8,12 @@ interface ExperienceCardProps {
   index: number;
 }
 
-const ExperienceCard: React.FC<ExperienceCardProps> = ({ experience, index }) => {
+const ExperienceCard: React.FC<ExperienceCardProps> = ({ experience }) => {
   const randomRotation = useMemo(() => {
     const direction = 1; // Always tilt to the right
     const degrees = 3 + Math.random() * 3;
     return direction * degrees;
-  }, [index]);
+  }, []);
 
   return (
     <Link href={`/${experience.slug}`} className="card block overflow-hidden">
