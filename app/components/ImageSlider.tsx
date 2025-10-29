@@ -27,31 +27,34 @@ const ImageSlider: React.FC<ImageSliderProps> = ({ images, title }) => {
   return (
     <div className="relative w-full">
       {/* Main Image Display */}
-      <div className="relative aspect-video rounded-lg overflow-hidden border border-white/[8%] bg-black/20">
+      <div className="relative w-full rounded-lg overflow-hidden border border-white/[8%] bg-black/20">
         <Image
           src={images[currentIndex]}
           alt={`${title} screenshot ${currentIndex + 1}`}
-          fill
-          className="object-cover"
+          width={1920}
+          height={1440}
+          className="w-full h-auto object-contain"
         />
 
         {/* Navigation Arrows */}
         {images.length > 1 && (
           <>
-            <button
-              onClick={goToPrevious}
-              className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 flex items-center justify-center rounded-full bg-black/70 hover:bg-black/90 border border-white/20 backdrop-blur-md transition-all duration-200 hover:scale-110 max-[640px]:w-10 max-[640px]:h-10 max-[640px]:left-2"
-              aria-label="Previous image"
-            >
-              <FaChevronLeft className="text-white text-lg max-[640px]:text-base" />
-            </button>
-            <button
-              onClick={goToNext}
-              className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 flex items-center justify-center rounded-full bg-black/70 hover:bg-black/90 border border-white/20 backdrop-blur-md transition-all duration-200 hover:scale-110 max-[640px]:w-10 max-[640px]:h-10 max-[640px]:right-2"
-              aria-label="Next image"
-            >
-              <FaChevronRight className="text-white text-lg max-[640px]:text-base" />
-            </button>
+            <div className="absolute inset-0 flex items-center justify-between px-4 pointer-events-none">
+              <button
+                onClick={goToPrevious}
+                className="pointer-events-auto w-12 h-12 flex items-center justify-center rounded-full bg-black/70 hover:bg-black/90 border border-white/20 backdrop-blur-md transition-all duration-200 hover:scale-110 max-[640px]:w-10 max-[640px]:h-10"
+                aria-label="Previous image"
+              >
+                <FaChevronLeft className="text-white text-lg max-[640px]:text-base" />
+              </button>
+              <button
+                onClick={goToNext}
+                className="pointer-events-auto w-12 h-12 flex items-center justify-center rounded-full bg-black/70 hover:bg-black/90 border border-white/20 backdrop-blur-md transition-all duration-200 hover:scale-110 max-[640px]:w-10 max-[640px]:h-10"
+                aria-label="Next image"
+              >
+                <FaChevronRight className="text-white text-lg max-[640px]:text-base" />
+              </button>
+            </div>
           </>
         )}
 

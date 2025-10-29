@@ -14,6 +14,7 @@ html {
   width: 100%;
   height: 100%;
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -21,23 +22,96 @@ body {
   color: var(--foreground);
   overflow-x: hidden;
   width: 100%;
+  will-change: background;
+  margin: 0;
+  padding: 0;
 }
 
-@keyframes slideUpBlur {
+/* Custom scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.65);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.8);
+}
+
+/* Firefox scrollbar */
+* {
+  scrollbar-color: rgba(255, 255, 255, 0.65) transparent;
+  scrollbar-width: thin;
+}
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Smooth animations for page transitions */
+@keyframes fadeInUp {
   from {
     opacity: 0;
-    transform: translateY(30px);
-    filter: blur(10px);
+    transform: translateY(20px);
   }
   to {
     opacity: 1;
     transform: translateY(0);
-    filter: blur(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Stagger animation for list items */
+@keyframes fadeInUpStagger {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Modal animations */
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes modalZoomIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
   }
 }
 
 main {
-  animation: slideUpBlur 0.6s ease-out;
+  animation: fadeInUp 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
   @apply ml-24 max-[768px]:ml-0;
 }
 
@@ -59,7 +133,7 @@ main {
   }
 
   .card {
-    @apply relative overflow-visible rounded-lg border border-white/[8%] bg-white/[3%] hover:bg-white/[6%] transition-all duration-300 p-6 cursor-pointer;
+    @apply relative overflow-hidden rounded-lg border border-white/10 bg-white/[2%] hover:bg-white/[4%] transition-colors duration-300 p-6 cursor-pointer;
   }
 
   .card-title {
@@ -71,7 +145,7 @@ main {
   }
 
   .card-image-container {
-    @apply absolute right-0 top-1/2 -translate-y-1/2 opacity-0 scale-75 transition-all duration-500 ease-out pointer-events-none z-20 w-auto h-auto;
+    @apply absolute right-0 top-1/2 -translate-y-1/2 opacity-0 scale-50 transition-all duration-400 ease-out pointer-events-none z-20 w-auto h-auto;
   }
 
   .card:hover .card-image-container {
@@ -79,29 +153,30 @@ main {
   }
 
   .card-image {
-    @apply object-contain rounded-lg shadow-2xl w-40 border-2 border-white/20 max-[768px]:w-32;
+    @apply object-contain rounded-lg w-40 border border-white/10 max-[768px]:w-32;
     height: auto;
     max-width: none;
   }
 
   /* Card hover circle */
   .card-hover-circle {
-    @apply absolute right-0 top-1/2 -translate-y-1/2 rounded-full opacity-0 transition-all duration-500 ease-out pointer-events-none z-5;
+    @apply absolute right-0 top-1/2 -translate-y-1/2 rounded-full opacity-0 transition-all duration-400 ease-out pointer-events-none z-5;
     width: 300px;
     height: 300px;
     transform: translate(100%, -50%) scale(0);
   }
 
   .card:hover .card-hover-circle {
-    @apply opacity-20;
+    @apply opacity-10;
     transform: translate(50%, -50%) scale(1);
   }
 
   /* Chibi App Design */
   .card-hover-app {
-    @apply absolute right-0 top-1/2 -translate-y-1/2 rounded-xl border-2 opacity-0 transition-all duration-500 ease-out pointer-events-none z-10;
+    @apply absolute right-0 top-1/2 -translate-y-1/2 rounded-xl border opacity-0 transition-all duration-400 ease-out pointer-events-none z-10;
     width: 120px;
     height: 160px;
+    border-width: 1px;
     transform: translate(100%, -50%) scale(0);
     overflow: hidden;
   }
@@ -125,20 +200,24 @@ main {
 
   /* Button Styles */
   .btn {
-    @apply inline-flex items-center justify-center gap-2 border border-white/[8%] bg-white/[3%] hover:bg-white/[6%] py-3 px-6 rounded-lg transition-all duration-200 cursor-pointer;
+    @apply inline-flex items-center justify-center gap-2 border border-white/10 bg-white/[2%] hover:bg-white/[4%] py-3 px-6 rounded-lg transition-colors duration-200 cursor-pointer;
   }
 
   .btn-primary {
-    @apply inline-flex items-center justify-center gap-4 border border-white/20 bg-white/10 hover:bg-white/20 py-3 px-6 rounded-lg transition-all duration-200 cursor-pointer;
+    @apply inline-flex items-center justify-center gap-4 border border-white/15 bg-white/[5%] hover:bg-white/[10%] py-3 px-6 rounded-lg transition-colors duration-200 cursor-pointer;
   }
 
   /* Section Styles */
   .section {
-    @apply py-24 px-12 max-[1024px]:px-10 max-[768px]:px-8 max-[640px]:px-6;
+    @apply py-8 px-12 max-[1024px]:px-10 max-[768px]:px-8 max-[640px]:px-6;
   }
 
   .section-container {
     @apply mx-auto max-w-5xl;
+  }
+
+  .section h2 {
+    @apply mb-6;
   }
 
   /* Link Styles */
@@ -148,6 +227,6 @@ main {
 
   /* Input Styles */
   .input {
-    @apply w-full px-4 py-3 rounded-lg border border-white/[8%] bg-white/[3%] text-white placeholder-white/40 focus:border-white/20 focus:outline-none transition-all duration-200;
+    @apply w-full px-4 py-3 rounded-lg border border-white/10 bg-white/[2%] text-white placeholder-white/40 focus:border-white/15 focus:bg-white/[3%] focus:outline-none transition-colors duration-200;
   }
 }

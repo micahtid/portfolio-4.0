@@ -13,11 +13,11 @@ export interface Project {
   shortDescription: string;
   longDescription: string;
   bulletPoints: string[];
+  contributionPoints: string[];
   timeline: string;
   appUrl?: string;
   repositoryUrl?: string;
   images: string[];
-  techs: Technology[];
   primaryColor: string;
   secondaryColor: string;
 }
@@ -29,10 +29,10 @@ export interface Experience {
   shortDescription: string;
   longDescription: string;
   bulletPoints: string[];
+  contributionPoints: string[];
   timeline: string;
   appUrl?: string;
   images: string[];
-  techs: Technology[];
   primaryColor: string;
   secondaryColor: string;
 }
@@ -43,7 +43,7 @@ export const projects: Project[] = [
     slug: "mira",
     description: "An application platform connecting youth-led organizations with potential interns and volunteers.",
     shortDescription: "Youth-led organizations connect with interns and volunteers.",
-    longDescription: "Mira is a two-sided platform that revolutionizes how youth-led organizations connect with talent. The platform enables organizations to post onsite and remote internship and volunteer opportunities, review applicants, and select candidates efficiently. On the flip side, high school students can easily browse opportunities and apply for positions that match their interests and skills. As lead developer, I managed both the frontend and backend architecture, directing a team of three developers and a social media manager. The platform integrated cutting-edge features including email notifications and Stripe subscriptions for premium organization accounts. Unfortunately, despite building strong initial traction, the project was eventually halted due to limited market reach in this niche sector.",
+    longDescription: "A two-sided marketplace connecting youth-led organizations with student interns and volunteers. Led full-stack development and team of 3 developers. Integrated email notifications and Stripe subscriptions for premium accounts. Built strong initial traction with 1000+ users before halting due to market constraints.",
     bulletPoints: [
       "Two-sided marketplace for organizations and students",
       "Email notification system for application updates",
@@ -51,18 +51,19 @@ export const projects: Project[] = [
       "Full-stack development and team leadership",
       "Managed 3 developers and 1 social media manager"
     ],
+    contributionPoints: [
+      "Architected full-stack application with React frontend and Node.js backend",
+      "Implemented Stripe payment processing for premium organization subscriptions",
+      "Designed and built email notification system for user updates",
+      "Led development team of 3 developers, coordinating features and sprints",
+      "Deployed application to Vercel with Firebase backend integration"
+    ],
     timeline: "2023 - 2024",
     appUrl: "https://mira-volunteer.vercel.app/",
     repositoryUrl: "https://github.com/micahtid/mira",
     images: [
       "/mira/1.png",
       "/mira/2.png"
-    ],
-    techs: [
-      { name: "React", icon: <FaReact size={20} /> },
-      { name: "Node.js", icon: <FaNodeJs size={20} /> },
-      { name: "Firebase", icon: <SiFirebase size={20} /> },
-      { name: "Stripe", icon: <SiStripe size={20} /> }
     ],
     primaryColor: "#8B5CF6",
     secondaryColor: "#EC4899"
@@ -72,7 +73,7 @@ export const projects: Project[] = [
     slug: "me2",
     description: "A compatibility-based chat application connecting students with similar profiles.",
     shortDescription: "Connect students based on compatibility scores.",
-    longDescription: "Me2 is an innovative chat platform designed specifically for students who want to connect based on shared interests and compatibility. The core feature is a proprietary compatibility algorithm that calculates match scores based on detailed profile data, enabling students to discover and connect with those most similar to them. The platform allows students to send chat requests, engage in real-time conversations, and join virtual study rooms together powered by Zoom integration. As lead developer working alongside one co-developer, I focused primarily on backend development and architecture—designing robust database schemas for chat data, implementing real-time messaging systems, and integrating third-party APIs. The platform built impressive momentum with a waitlist exceeding 1,000 users, but was ultimately halted due to resource constraints.",
+    longDescription: "A student-focused chat platform using proprietary compatibility algorithms to match users. Features real-time messaging, virtual study rooms via Zoom API, and complex backend architecture. Achieved 1000+ user waitlist before halting due to resource constraints.",
     bulletPoints: [
       "Proprietary compatibility matching algorithm",
       "Real-time chat and messaging system",
@@ -80,18 +81,19 @@ export const projects: Project[] = [
       "Backend-focused development and architecture",
       "1,000+ user waitlist at peak"
     ],
+    contributionPoints: [
+      "Designed and implemented proprietary compatibility matching algorithm",
+      "Built real-time messaging infrastructure using Firebase and WebSockets",
+      "Integrated Zoom API for virtual study room functionality",
+      "Architected backend database schemas for efficient user and chat data management",
+      "Grew user base to 1,000+ waitlist members through iterative product development"
+    ],
     timeline: "2022 - 2023",
     appUrl: "https://me2-beta.vercel.app/",
     repositoryUrl: "https://github.com/micahtid/me2",
     images: [
       "/me2/1.png",
       "/me2/2.png"
-    ],
-    techs: [
-      { name: "React", icon: <FaReact size={20} /> },
-      { name: "Node.js", icon: <FaNodeJs size={20} /> },
-      { name: "Firebase", icon: <SiFirebase size={20} /> },
-      { name: "Zoom API", icon: <SiZoom size={20} /> }
     ],
     primaryColor: "#06B6D4",
     secondaryColor: "#0EA5E9"
@@ -144,7 +146,7 @@ export const experiences: Experience[] = [
     slug: "restoring-rainbows",
     description: "Developed a full-featured website and administrative panel for a NPO during a six-month internship.",
     shortDescription: "Full-featured website and admin panel for nonprofit organization.",
-    longDescription: "During my six-month internship at Restoring Rainbows, I had the privilege of working directly with the co-founders to build their organizational website from the ground up. This was a comprehensive project that involved creating multiple pages showcasing the nonprofit's branches, board members, blog content, impact stories, and more. Beyond the public-facing website, I developed a robust administrative backend panel that enables staff members to easily manage dynamic content without technical knowledge. The platform seamlessly integrates multiple third-party APIs including Google Maps for location services and Instagram for social media feeds. This experience taught me valuable lessons about working with non-profit organizations, managing complex requirements, and building user-friendly solutions for both public users and internal staff.",
+    longDescription: "Built full-featured website and CMS for nonprofit from scratch. Developed admin panel enabling staff to manage content without technical knowledge. Integrated Google Maps and Instagram APIs. Collaborated directly with co-founders to deliver user-centric solutions for public and internal users.",
     bulletPoints: [
       "Built full-featured public website from scratch",
       "Developed administrative content management system",
@@ -153,18 +155,19 @@ export const experiences: Experience[] = [
       "Collaborated directly with nonprofit co-founders",
       "Managed dynamic content and data structures"
     ],
+    contributionPoints: [
+      "Built complete website from scratch with React frontend and Node.js backend",
+      "Developed intuitive admin panel allowing staff to manage content without coding knowledge",
+      "Integrated Google Maps API for displaying branch locations across nonprofit network",
+      "Implemented Instagram API integration to automatically display social media feeds",
+      "Collaborated with nonprofit co-founders to understand requirements and deliver solutions",
+      "Deployed website to production with continuous updates and maintenance"
+    ],
     timeline: "2023 - 2024",
     appUrl: "https://restoringrainbows.org",
     images: [
       "/restoring-rainbows/1.png",
       "/restoring-rainbows/2.png"
-    ],
-    techs: [
-      { name: "React", icon: <FaReact size={20} /> },
-      { name: "Node.js", icon: <FaNodeJs size={20} /> },
-      { name: "Firebase", icon: <SiFirebase size={20} /> },
-      { name: "Open Street Map", icon: <SiGooglemaps size={20} /> },
-      { name: "Instagram API", icon: <SiInstagram size={20} /> }
     ],
     primaryColor: "#10B981",
     secondaryColor: "#34D399"

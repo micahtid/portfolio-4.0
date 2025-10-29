@@ -3,7 +3,7 @@ import ContactForm from '@/app/components/ContactForm';
 
 const Contact = () => {
   return (
-    <main>
+    <main className="pt-24">
       <ContactForm />
     </main>
   );

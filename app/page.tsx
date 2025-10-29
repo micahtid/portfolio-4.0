@@ -4,12 +4,12 @@ import Footer from './components/Footer';
 
 const Home = () => {
   return (
-    <>
-      <main className="h-screen w-full flex items-center justify-center">
+    <div className="w-full">
+      <main className="w-full min-h-screen max-h-screen overflow-hidden flex items-center justify-center">
         <Hero />
       </main>
       <Footer />
-    </>
+    </div>
   );
 };
 

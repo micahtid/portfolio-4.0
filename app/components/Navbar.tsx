@@ -27,21 +27,21 @@ const Navbar = () => {
           <Link
             key={index}
             href={item.href}
-            className="group relative flex items-center justify-center w-14 h-14 rounded-lg border border-white/[8%] bg-white/[3%] hover:bg-white/[6%] transition-all duration-300 backdrop-blur-sm"
+            className="group relative flex items-center justify-center w-14 h-14 rounded-lg border border-white/10 bg-white/[2%] hover:bg-white/[4%] transition-colors duration-300 backdrop-blur-sm"
             onMouseEnter={() => setHoveredIndex(index)}
             onMouseLeave={() => setHoveredIndex(null)}
           >
-            <item.icon className="text-white/70 group-hover:text-white transition-colors duration-200" size={20} />
+            <item.icon className="text-white/60 group-hover:text-white transition-colors duration-300" size={20} />
 
             {/* Tooltip */}
             <div
-              className={`absolute left-full ml-4 px-3 py-2 rounded-lg border border-white/[8%] bg-white/[3%] backdrop-blur-sm whitespace-nowrap transition-all duration-200 pointer-events-none max-[768px]:left-1/2 max-[768px]:-translate-x-1/2 max-[768px]:bottom-full max-[768px]:mb-4 max-[768px]:ml-0 ${
+              className={`absolute left-full ml-4 px-3 py-2 rounded-lg border border-white/10 bg-white/[3%] backdrop-blur-sm whitespace-nowrap transition-all duration-300 pointer-events-none max-[768px]:left-1/2 max-[768px]:-translate-x-1/2 max-[768px]:bottom-full max-[768px]:mb-4 max-[768px]:ml-0 ${
                 hoveredIndex === index
                   ? 'opacity-100 translate-x-0 max-[768px]:translate-y-0'
                   : 'opacity-0 -translate-x-2 max-[768px]:translate-x-0 max-[768px]:translate-y-2'
               }`}
             >
-              <span className="label text-white">{item.label}</span>
+              <span className="label text-white/80">{item.label}</span>
             </div>
           </Link>
         ))}

@@ -1,43 +1,117 @@
-import React from 'react';
-import Link from 'next/link';
-import { projects, experiences } from '@/data';
-import { FaArrowRight } from 'react-icons/fa';
+'use client';
+
+import React, { useState } from 'react';
+import { projects, experiences, Project, Experience } from '@/data';
+import { FaChevronDown, FaImage, FaGithub, FaGlobe } from 'react-icons/fa';
+import useModal from '@/app/hooks/useModal';
+import useImageModal from '@/app/hooks/useImageModal';
+
+type PortfolioItemType = Project | Experience;
+
+const PortfolioItem = ({ item, isProject }: { item: PortfolioItemType; isProject: boolean }) => {
+  const [isExpanded, setIsExpanded] = useState(false);
+  const { onOpen } = useModal();
+  const { setImages } = useImageModal();
+
+  const hasImages = item.images && item.images.length > 0;
+
+  const handleViewImages = () => {
+    setImages(item.images, item.title);
+    onOpen();
+  };
+
+  return (
+    <div
+      className="border-b border-white/[10%] py-6 last:border-b-0 transition-all duration-300"
+      style={{
+        animation: `fadeInUpStagger 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards`,
+      }}
+    >
+      {/* Title and Long Description */}
+      <div className="mb-4">
+        <h3 className="card-title">{item.title}</h3>
+        <p className="text text-white/60 mt-3 leading-relaxed">{item.longDescription}</p>
+      </div>
+
+      {/* Expand Button as Text */}
+      <button
+        onClick={() => setIsExpanded(!isExpanded)}
+        className="text text-white transition-colors duration-200 flex items-center gap-2 mb-6 font-medium"
+      >
+        {isExpanded ? 'Collapse Contributions' : 'Expand Contributions'}
+        <FaChevronDown
+          size={12}
+          className={`transition-transform duration-300 ${isExpanded ? 'rotate-180' : ''}`}
+        />
+      </button>
+
+      {/* Expanded Content */}
+      {isExpanded && (
+        <div className="space-y-4 mb-6 pl-4 border-l border-white/10">
+          {/* Contribution Points */}
+          <div>
+            <ul className="space-y-2">
+              {item.contributionPoints.map((point, i) => (
+                <li key={i} className="text text-white/60 flex items-start gap-4">
+                  <span className="text-white/30 mt-1 flex-shrink-0">—</span>
+                  <span>{point}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      )}
+
+      {/* Icon Buttons Section */}
+      <div className="flex gap-4 items-center mt-6">
+        {hasImages && (
+          <button
+            onClick={handleViewImages}
+            className="group relative flex items-center justify-center w-12 h-12 rounded-lg border border-white/10 bg-white/[2%] hover:bg-white/[4%] transition-colors duration-300 backdrop-blur-sm"
+            title="View Images"
+          >
+            <FaImage size={18} className="text-white/60 group-hover:text-white transition-colors duration-300" />
+          </button>
+        )}
+        {item.appUrl && (
+          <a
+            href={item.appUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group relative flex items-center justify-center w-12 h-12 rounded-lg border border-white/10 bg-white/[2%] hover:bg-white/[4%] transition-colors duration-300 backdrop-blur-sm"
+            title="Visit Website"
+          >
+            <FaGlobe size={18} className="text-white/60 group-hover:text-white transition-colors duration-300" />
+          </a>
+        )}
+        {isProject && (item as Project).repositoryUrl && (
+          <a
+            href={(item as Project).repositoryUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group relative flex items-center justify-center w-12 h-12 rounded-lg border border-white/10 bg-white/[2%] hover:bg-white/[4%] transition-colors duration-300 backdrop-blur-sm"
+            title="View Repository"
+          >
+            <FaGithub size={18} className="text-white/60 group-hover:text-white transition-colors duration-300" />
+          </a>
+        )}
+      </div>
+
+    </div>
+  );
+};
 
 const Portfolio = () => {
   return (
-    <main>
+    <main className="pt-24">
       {/* Experience Section */}
       <section id="experience" className="section">
         <div className="section-container">
-          <h2 className="header mb-12">Experience</h2>
-          <div className="space-y-8">
+          <h2 className="header">Experience</h2>
+          <div className="space-y-0">
             {experiences.map((experience, index) => (
-              <div key={index} className="border-b border-white/[8%] pb-6 last:border-b-0">
-                <div className="flex-1 mb-3">
-                  <Link href={`/${experience.slug}`} className="group">
-                    <h3 className="card-title group-hover:underline transition-all duration-200 underline underline-offset-4">{experience.title}</h3>
-                  </Link>
-                  <p className="text text-white/70 mt-2">{experience.shortDescription}</p>
-                </div>
-
-                {/* Bullet Points */}
-                <ul className="space-y-2 mt-3 mb-4">
-                  {experience.bulletPoints.map((point, i) => (
-                    <li key={i} className="text text-white/60 flex items-start gap-3">
-                      <span className="text-white/40 mt-1">•</span>
-                      <span>{point}</span>
-                    </li>
-                  ))}
-                </ul>
-
-                {/* View Details Link at bottom */}
-                <Link
-                  href={`/${experience.slug}`}
-                  className="text text-white/60 hover:text-white transition-colors duration-200 flex items-center gap-2"
-                >
-                  View Details
-                  <FaArrowRight size={14} />
-                </Link>
+              <div key={index} style={{ animationDelay: `${index * 0.1}s` }}>
+                <PortfolioItem item={experience} isProject={false} />
               </div>
             ))}
           </div>
@@ -47,35 +121,11 @@ const Portfolio = () => {
       {/* Projects Section */}
       <section id="projects" className="section">
         <div className="section-container">
-          <h2 className="header mb-12">Projects</h2>
-          <div className="space-y-8">
+          <h2 className="header">Projects</h2>
+          <div className="space-y-0">
             {projects.map((project, index) => (
-              <div key={index} className="border-b border-white/[8%] pb-6 last:border-b-0">
-                <div className="flex-1 mb-3">
-                  <Link href={`/${project.slug}`} className="group">
-                    <h3 className="card-title group-hover:underline transition-all duration-200 underline underline-offset-4">{project.title}</h3>
-                  </Link>
-                  <p className="text text-white/70 mt-2">{project.shortDescription}</p>
-                </div>
-
-                {/* Bullet Points */}
-                <ul className="space-y-2 mt-3 mb-4">
-                  {project.bulletPoints.map((point, i) => (
-                    <li key={i} className="text text-white/60 flex items-start gap-3">
-                      <span className="text-white/40 mt-1">•</span>
-                      <span>{point}</span>
-                    </li>
-                  ))}
-                </ul>
-
-                {/* View Details Link at bottom */}
-                <Link
-                  href={`/${project.slug}`}
-                  className="text text-white/60 hover:text-white transition-colors duration-200 flex items-center gap-2"
-                >
-                  View Details
-                  <FaArrowRight size={14} />
-                </Link>
+              <div key={index} style={{ animationDelay: `${index * 0.1}s` }}>
+                <PortfolioItem item={project} isProject={true} />
               </div>
             ))}
           </div>

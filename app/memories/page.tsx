@@ -3,7 +3,7 @@ import { memories } from '@/data';
 
 const Memories = () => {
   return (
-    <main>
+    <main className="pt-24">
       <section className="section">
         <div className="section-container">
           <h1 className="header mb-12">Memories</h1>

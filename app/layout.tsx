@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Plus_Jakarta_Sans, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/Navbar";
+import ModalProvider from "./components/ModalProvider";
 
 const jakartaSans = Plus_Jakarta_Sans({
   variable: "--font-jakarta-sans",
@@ -32,6 +33,7 @@ export default function RootLayout({
         className={`${jakartaSans.variable} ${playfairDisplay.variable} font-sans antialiased bg-[#0A0A0A]`}
         style={{ fontFamily: 'var(--font-jakarta-sans)' }}
       >
+        <ModalProvider />
         <Navbar />
         {children}
       </body>

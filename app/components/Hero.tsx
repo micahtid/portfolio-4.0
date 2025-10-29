@@ -29,7 +29,7 @@ const Hero = () => {
     <section className="w-full h-full flex items-center justify-center overflow-hidden">
       <div className="max-w-5xl w-full px-12 max-[1024px]:px-10 max-[768px]:px-8 max-[640px]:px-6 flex flex-col items-start justify-center gap-8">
         <h3 className='header'>Hey, I'm Micah Tidball<br />I build <span style={{ fontFamily: 'var(--font-playfair)', fontStyle: 'italic' }}>full-stack</span> applications</h3>
-        <p className="text text-white/70 max-w-3xl leading-relaxed">
+        <p className="text text-white/60 max-w-3xl leading-relaxed">
           I'm a full-stack developer passionate about creating beautiful, user-centric applications. With experience building platforms from the ground up, I specialize in React, Node.js, and cloud technologies. Let's build something amazing together.
         </p>
         <div className="flex gap-4 justify-start flex-wrap max-[640px]:gap-3">
