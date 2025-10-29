@@ -41,6 +41,11 @@ const Memories = () => {
 
                       {/* Content */}
                       <div className="p-6">
+                        {/* Date */}
+                        {memory.date && (
+                          <p className="label text-white/50 mb-2">{memory.date}</p>
+                        )}
+
                         {/* Title */}
                         <h3 className="text-white font-semibold text-lg mb-2">
                           {memory.title}
@@ -79,6 +84,11 @@ const Memories = () => {
 
                       {/* Content */}
                       <div className="p-6">
+                        {/* Date */}
+                        {memory.date && (
+                          <p className="label text-white/50 mb-2">{memory.date}</p>
+                        )}
+
                         {/* Title */}
                         <h3 className="text-white font-semibold text-lg mb-2">
                           {memory.title}

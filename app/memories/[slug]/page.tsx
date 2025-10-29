@@ -1,6 +1,5 @@
 import React from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import { getMemoryBySlug, memories } from '@/data';
 
@@ -34,20 +33,9 @@ const MemoryDetail = async ({ params }: PageProps) => {
             <span className="label">Back to Memories</span>
           </Link>
 
-          {/* Image Section */}
-          {memory.image ? (
-            <div className="relative w-full h-96 rounded-lg overflow-hidden border border-white/10 mb-8">
-              <Image
-                src={memory.image}
-                alt={memory.title}
-                fill
-                className="object-cover"
-              />
-            </div>
-          ) : (
-            <div className="w-full h-96 rounded-lg border-2 border-dashed border-white/20 flex items-center justify-center mb-8 bg-white/[2%]">
-              <p className="text text-white/60">No photo available at this time.</p>
-            </div>
+          {/* Date */}
+          {memory.date && (
+            <p className="label text-white/50 mb-3">{memory.date}</p>
           )}
 
           {/* Title */}

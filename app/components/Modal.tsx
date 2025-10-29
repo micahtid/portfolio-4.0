@@ -44,8 +44,8 @@ const Modal: React.FC<ModalProps> = ({
                 {children}
             </div>
             <Dialog.Close asChild>
-                <button className="text-white/60 hover:text-white absolute top-[10px] right-[10px] inline-flex h-[25px] w-[25px]
-                appearance-none items-center justify-center rounded-full focus:outline-none transition-colors duration-200">
+                <button className="icon-btn absolute top-[10px] right-[10px] inline-flex h-[25px] w-[25px]
+                appearance-none items-center justify-center rounded-full focus:outline-none">
                     <IoMdClose size={20} />
                 </button>
             </Dialog.Close>

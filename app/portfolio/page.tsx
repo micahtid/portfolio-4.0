@@ -23,9 +23,6 @@ const PortfolioItem = ({ item, isProject }: { item: PortfolioItemType; isProject
   return (
     <div
       className="border-b border-white/[10%] py-6 last:border-b-0 transition-all duration-300"
-      style={{
-        animation: `fadeInUpStagger 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards`,
-      }}
     >
       {/* Title and Long Description */}
       <div className="mb-4">
@@ -36,7 +33,7 @@ const PortfolioItem = ({ item, isProject }: { item: PortfolioItemType; isProject
       {/* Expand Button as Text */}
       <button
         onClick={() => setIsExpanded(!isExpanded)}
-        className="text text-white transition-colors duration-200 flex items-center gap-2 mb-6 font-medium"
+        className="text text-white transition-colors duration-200 flex items-center gap-2 mb-10 font-medium"
       >
         {isExpanded ? 'Collapse Contributions' : 'Expand Contributions'}
         <FaChevronDown
@@ -67,7 +64,7 @@ const PortfolioItem = ({ item, isProject }: { item: PortfolioItemType; isProject
         {hasImages && (
           <button
             onClick={handleViewImages}
-            className="text-white/60 hover:text-white transition-colors duration-200"
+            className="icon-btn"
             title="View Images"
           >
             <FaImage size={20} />
@@ -78,7 +75,7 @@ const PortfolioItem = ({ item, isProject }: { item: PortfolioItemType; isProject
             href={item.appUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-white/60 hover:text-white transition-colors duration-200"
+            className="icon-btn"
             title="Visit Website"
           >
             <FaGlobe size={20} />
@@ -89,7 +86,7 @@ const PortfolioItem = ({ item, isProject }: { item: PortfolioItemType; isProject
             href={(item as Project).repositoryUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-white/60 hover:text-white transition-colors duration-200"
+            className="icon-btn"
             title="View Repository"
           >
             <FaGithub size={20} />
@@ -110,7 +107,7 @@ const Portfolio = () => {
           <h2 className="header">Experience</h2>
           <div className="space-y-0">
             {experiences.map((experience, index) => (
-              <div key={index} style={{ animationDelay: `${index * 0.1}s` }}>
+              <div key={index} className="animate-stagger" style={{ animationDelay: `${index * 0.1}s` }}>
                 <PortfolioItem item={experience} isProject={false} />
               </div>
             ))}
@@ -124,7 +121,7 @@ const Portfolio = () => {
           <h2 className="header">Projects</h2>
           <div className="space-y-0">
             {projects.map((project, index) => (
-              <div key={index} style={{ animationDelay: `${index * 0.1}s` }}>
+              <div key={index} className="animate-stagger" style={{ animationDelay: `${index * 0.1}s` }}>
                 <PortfolioItem item={project} isProject={true} />
               </div>
             ))}

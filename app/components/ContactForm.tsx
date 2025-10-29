@@ -37,7 +37,7 @@ const ContactForm: React.FC = () => {
 
       // Reset success message after 3 seconds
       setTimeout(() => setSubmitStatus('idle'), 3000);
-    } catch (error) {
+    } catch {
       setSubmitStatus('error');
       setTimeout(() => setSubmitStatus('idle'), 3000);
     } finally {
@@ -53,8 +53,8 @@ const ContactForm: React.FC = () => {
           <div className="flex flex-col justify-start">
             <h2 className="header mb-6">Get In Touch</h2>
             <p className="text text-white/70 leading-relaxed">
-              Have a project in mind or want to collaborate? I&apos;d love to hear from you.
-              Fill out the form and I&apos;ll get back to you as soon as possible.
+              Have a project in mind or want to collaborate? I&rsquo;d love to hear from you.
+              Fill out the form and I&rsquo;ll get back to you as soon as possible.
             </p>
           </div>
 

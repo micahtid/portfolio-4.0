@@ -42,17 +42,17 @@ const ImageSlider: React.FC<ImageSliderProps> = ({ images, title }) => {
             <div className="absolute inset-0 flex items-center justify-between px-4 pointer-events-none">
               <button
                 onClick={goToPrevious}
-                className="pointer-events-auto w-12 h-12 flex items-center justify-center rounded-full bg-black/70 hover:bg-black/90 border border-white/20 backdrop-blur-md transition-all duration-200 hover:scale-110 max-[640px]:w-10 max-[640px]:h-10"
+                className="slider-nav-btn w-12 h-12 max-[640px]:w-10 max-[640px]:h-10"
                 aria-label="Previous image"
               >
-                <FaChevronLeft className="text-white text-lg max-[640px]:text-base" />
+                <FaChevronLeft className="text-lg max-[640px]:text-base" />
               </button>
               <button
                 onClick={goToNext}
-                className="pointer-events-auto w-12 h-12 flex items-center justify-center rounded-full bg-black/70 hover:bg-black/90 border border-white/20 backdrop-blur-md transition-all duration-200 hover:scale-110 max-[640px]:w-10 max-[640px]:h-10"
+                className="slider-nav-btn w-12 h-12 max-[640px]:w-10 max-[640px]:h-10"
                 aria-label="Next image"
               >
-                <FaChevronRight className="text-white text-lg max-[640px]:text-base" />
+                <FaChevronRight className="text-lg max-[640px]:text-base" />
               </button>
             </div>
           </>

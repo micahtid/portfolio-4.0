@@ -27,11 +27,11 @@ const Navbar = () => {
           <Link
             key={index}
             href={item.href}
-            className="group relative flex items-center justify-center w-14 h-14 rounded-lg border border-white/10 bg-white/[2%] hover:bg-white/[4%] transition-colors duration-300 backdrop-blur-sm"
+            className="group relative flex items-center justify-center icon-btn-bg backdrop-blur-sm"
             onMouseEnter={() => setHoveredIndex(index)}
             onMouseLeave={() => setHoveredIndex(null)}
           >
-            <item.icon className="text-white/60 group-hover:text-white transition-colors duration-300" size={20} />
+            <item.icon className="icon-btn group-hover:text-white" size={20} />
 
             {/* Tooltip */}
             <div

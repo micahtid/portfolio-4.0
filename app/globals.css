@@ -220,4 +220,29 @@ main {
   .input {
     @apply w-full px-4 py-3 rounded-lg border border-white/10 bg-white/[2%] text-white placeholder-white/40 focus:border-white/15 focus:bg-white/[3%] focus:outline-none transition-colors duration-200;
   }
+
+  /* Icon Button Styles */
+  .icon-btn {
+    @apply inline-flex items-center justify-center text-white/60 hover:text-white transition-all duration-200 cursor-pointer hover:scale-110;
+  }
+
+  /* Icon button with background */
+  .icon-btn-bg {
+    @apply inline-flex items-center justify-center w-14 h-14 rounded-lg border border-white/10 bg-white/[2%] hover:bg-white/[4%] transition-colors duration-300;
+  }
+
+  /* Link-style icon button */
+  .icon-link {
+    @apply inline-flex items-center justify-center text-white/60 hover:text-white/80 transition-all duration-200 cursor-pointer hover:scale-110;
+  }
+
+  /* Stagger animation utility */
+  .animate-stagger {
+    animation: fadeInUpStagger 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+  }
+
+  /* Image Slider Navigation Button */
+  .slider-nav-btn {
+    @apply pointer-events-auto flex items-center justify-center rounded-full bg-black/70 hover:bg-black/90 border border-white/20 backdrop-blur-md transition-all duration-200 hover:scale-110 text-white;
+  }
 }
