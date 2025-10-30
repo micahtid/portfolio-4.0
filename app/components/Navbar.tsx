@@ -21,7 +21,7 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="fixed left-6 top-1/2 -translate-y-1/2 z-50 max-[1024px]:left-4 max-[768px]:bottom-6 max-[768px]:top-auto max-[768px]:left-1/2 max-[768px]:-translate-x-1/2 max-[768px]:translate-y-0">
+    <nav className="fixed left-6 top-1/2 -translate-y-1/2 z-40 max-[1024px]:left-4 max-[768px]:bottom-6 max-[768px]:top-auto max-[768px]:left-1/2 max-[768px]:-translate-x-1/2 max-[768px]:translate-y-0">
       <div className="flex flex-col gap-4 max-[768px]:flex-row">
         {navItems.map((item, index) => (
           <Link
@@ -31,17 +31,17 @@ const Navbar = () => {
             onMouseEnter={() => setHoveredIndex(index)}
             onMouseLeave={() => setHoveredIndex(null)}
           >
-            <item.icon className="icon-btn group-hover:text-white" size={20} />
+            <item.icon className="icon-btn" size={20} />
 
             {/* Tooltip */}
             <div
-              className={`absolute left-full ml-4 px-3 py-2 rounded-lg border border-white/10 bg-white/[3%] backdrop-blur-sm whitespace-nowrap transition-all duration-300 pointer-events-none max-[768px]:left-1/2 max-[768px]:-translate-x-1/2 max-[768px]:bottom-full max-[768px]:mb-4 max-[768px]:ml-0 ${
+              className={`absolute left-full ml-4 px-3 py-2 rounded-lg navbar-tooltip backdrop-blur-sm whitespace-nowrap transition-all duration-300 pointer-events-none max-[768px]:left-1/2 max-[768px]:-translate-x-1/2 max-[768px]:bottom-full max-[768px]:mb-4 max-[768px]:ml-0 ${
                 hoveredIndex === index
                   ? 'opacity-100 translate-x-0 max-[768px]:translate-y-0'
                   : 'opacity-0 -translate-x-2 max-[768px]:translate-x-0 max-[768px]:translate-y-2'
               }`}
             >
-              <span className="label text-white/80">{item.label}</span>
+              <span className="label navbar-tooltip-text">{item.label}</span>
             </div>
           </Link>
         ))}

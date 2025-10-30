@@ -4,6 +4,8 @@ import "./globals.css";
 import Navbar from "./components/Navbar";
 import ModalProvider from "./components/ModalProvider";
 import Backdrop from "./components/Backdrop";
+import ThemeToggle from "./components/ThemeToggle";
+import { ThemeProvider } from "./context/ThemeContext";
 
 const jakartaSans = Plus_Jakarta_Sans({
   variable: "--font-jakarta-sans",
@@ -31,13 +33,16 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${jakartaSans.variable} ${playfairDisplay.variable} font-sans antialiased bg-[#0A0A0A]`}
+        className={`${jakartaSans.variable} ${playfairDisplay.variable} font-sans antialiased`}
         style={{ fontFamily: 'var(--font-jakarta-sans)' }}
       >
-        <Backdrop />
-        <ModalProvider />
-        <Navbar />
-        {children}
+        <ThemeProvider>
+          <Backdrop />
+          <ThemeToggle />
+          <ModalProvider />
+          <Navbar />
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );

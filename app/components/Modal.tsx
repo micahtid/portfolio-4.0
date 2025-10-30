@@ -21,23 +21,23 @@ const Modal: React.FC<ModalProps> = ({
     <Dialog.Root open={isOpen} defaultOpen={isOpen} onOpenChange={onChange}>
       <Dialog.Portal>
         <Dialog.Overlay
-          className="bg-black/60 backdrop-blur-md fixed inset-0"
+          className="modal-overlay backdrop-blur-md fixed inset-0 z-[100]"
           style={{
             animation: 'modalFadeIn 0.2s ease-out forwards'
           }}
         />
         <Dialog.Content
-          className="fixed drop-shadow-md border border-white/10 top-[50%] left-[50%]
+          className="fixed drop-shadow-md border modal-content top-[50%] left-[50%]
           max-h-full h-full md:h-auto md:max-h-[85vh] w-full md:w-[90vw] md:max-w-[900px]
-          translate-x-[-50%] translate-y-[-50%] rounded-lg bg-[#0A0A0A] p-[25px] focus:outline-none"
+          translate-x-[-50%] translate-y-[-50%] rounded-lg p-[25px] focus:outline-none z-[101]"
           style={{
             animation: 'modalZoomIn 0.2s ease-out forwards'
           }}
         >
-            <Dialog.Title className="text-xl text-white font-bold mb-4">
+            <Dialog.Title className="text-xl modal-title font-bold mb-4">
                 {title}
             </Dialog.Title>
-            <Dialog.Description className="mb-5 text-sm leading-normal text-white/60">
+            <Dialog.Description className="mb-5 text-sm leading-normal modal-description">
                 {description}
             </Dialog.Description>
             <div className="min-h-[400px]">

@@ -27,7 +27,7 @@ const ImageSlider: React.FC<ImageSliderProps> = ({ images, title }) => {
   return (
     <div className="relative w-full min-h-[500px]">
       {/* Main Image Display */}
-      <div className="relative w-full rounded-lg overflow-hidden border border-white/[8%] bg-black/20">
+      <div className="relative w-full rounded-lg overflow-hidden border slider-image-container">
         <Image
           src={images[currentIndex]}
           alt={`${title} screenshot ${currentIndex + 1}`}
@@ -60,8 +60,8 @@ const ImageSlider: React.FC<ImageSliderProps> = ({ images, title }) => {
 
         {/* Image Counter */}
         {images.length > 1 && (
-          <div className="absolute bottom-4 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full bg-black/60 backdrop-blur-sm border border-white/10 max-[640px]:bottom-2">
-            <span className="label text-white">
+          <div className="absolute bottom-4 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full slider-counter backdrop-blur-sm border max-[640px]:bottom-2">
+            <span className="label slider-counter-text">
               {currentIndex + 1} / {images.length}
             </span>
           </div>
@@ -75,10 +75,10 @@ const ImageSlider: React.FC<ImageSliderProps> = ({ images, title }) => {
             <button
               key={index}
               onClick={() => setCurrentIndex(index)}
-              className={`relative flex-shrink-0 aspect-video w-32 rounded-lg overflow-hidden border-2 transition-all duration-200 bg-black/20 ${
+              className={`relative flex-shrink-0 aspect-video w-32 rounded-lg overflow-hidden border-2 transition-all duration-200 slider-thumbnail ${
                 index === currentIndex
-                  ? 'border-white/40 scale-105'
-                  : 'border-white/[8%] hover:border-white/20'
+                  ? 'slider-thumbnail-active'
+                  : 'slider-thumbnail-inactive'
               }`}
             >
               <Image

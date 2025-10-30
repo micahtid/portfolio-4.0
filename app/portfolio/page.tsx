@@ -22,18 +22,18 @@ const PortfolioItem = ({ item, isProject }: { item: PortfolioItemType; isProject
 
   return (
     <div
-      className="border-b border-white/[10%] py-6 last:border-b-0 transition-all duration-300"
+      className="border-b portfolio-item-border py-6 last:border-b-0 transition-all duration-300"
     >
       {/* Title and Long Description */}
       <div className="mb-4">
         <h3 className="card-title">{item.title}</h3>
-        <p className="text text-white/60 mt-3 leading-relaxed">{item.longDescription}</p>
+        <p className="text portfolio-description mt-3 leading-relaxed">{item.longDescription}</p>
       </div>
 
       {/* Expand Button as Text */}
       <button
         onClick={() => setIsExpanded(!isExpanded)}
-        className="text text-white transition-colors duration-200 flex items-center gap-2 mb-6 font-medium"
+        className="text portfolio-expand-btn transition-colors duration-200 flex items-center gap-2 mb-6 font-medium"
       >
         {isExpanded ? 'Collapse Contributions' : 'Expand Contributions'}
         <FaChevronDown
@@ -44,13 +44,13 @@ const PortfolioItem = ({ item, isProject }: { item: PortfolioItemType; isProject
 
       {/* Expanded Content */}
       {isExpanded && (
-        <div className="space-y-4 mb-12 pl-4 border-l border-white/10">
+        <div className="space-y-4 mb-12 pl-4 border-l portfolio-contribution-border">
           {/* Contribution Points */}
           <div>
             <ul className="space-y-2">
               {item.contributionPoints.map((point, i) => (
-                <li key={i} className="text text-white/60 flex items-start gap-4">
-                  <span className="text-white/30 mt-1 flex-shrink-0">—</span>
+                <li key={i} className="text portfolio-contribution flex items-start gap-4">
+                  <span className="portfolio-bullet mt-1 flex-shrink-0">—</span>
                   <span>{point}</span>
                 </li>
               ))}

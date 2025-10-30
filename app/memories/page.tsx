@@ -25,7 +25,7 @@ const Memories = () => {
                 if (index % 2 !== 0) return null; // Only even indices
                 return (
                   <Link href={`/memories/${memory.slug}`} key={memory.slug}>
-                    <div className="border border-white/[8%] rounded-lg bg-white/[2%] transition-all duration-300 hover:bg-white/[4%] cursor-pointer">
+                    <div className="border memory-card rounded-lg transition-all duration-300 cursor-pointer">
                       {/* Image Banner */}
                       {memory.image ? (
                         <div className="p-6">
@@ -44,16 +44,16 @@ const Memories = () => {
                       <div className="p-6">
                         {/* Date */}
                         {memory.date && (
-                          <p className="label text-white/50 mb-2">{memory.date}</p>
+                          <p className="label memory-date mb-2">{memory.date}</p>
                         )}
 
                         {/* Title */}
-                        <h3 className="text-white font-semibold text-lg mb-2">
+                        <h3 className="memory-title font-semibold text-lg mb-2">
                           {memory.title}
                         </h3>
 
                         {/* Truncated Description */}
-                        <p className="text text-white/60">
+                        <p className="text memory-description">
                           {truncateDescription(memory.description, 100)}
                         </p>
                       </div>
@@ -69,7 +69,7 @@ const Memories = () => {
                 if (index % 2 === 0) return null; // Only odd indices
                 return (
                   <Link href={`/memories/${memory.slug}`} key={memory.slug}>
-                    <div className="border border-white/[8%] rounded-lg bg-white/[2%] transition-all duration-300 hover:bg-white/[4%] cursor-pointer">
+                    <div className="border memory-card rounded-lg transition-all duration-300 cursor-pointer">
                       {/* Image Banner */}
                       {memory.image ? (
                         <div className="p-6">
@@ -88,16 +88,16 @@ const Memories = () => {
                       <div className="p-6">
                         {/* Date */}
                         {memory.date && (
-                          <p className="label text-white/50 mb-2">{memory.date}</p>
+                          <p className="label memory-date mb-2">{memory.date}</p>
                         )}
 
                         {/* Title */}
-                        <h3 className="text-white font-semibold text-lg mb-2">
+                        <h3 className="memory-title font-semibold text-lg mb-2">
                           {memory.title}
                         </h3>
 
                         {/* Truncated Description */}
-                        <p className="text text-white/60">
+                        <p className="text memory-description">
                           {truncateDescription(memory.description, 100)}
                         </p>
                       </div>

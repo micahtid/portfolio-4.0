@@ -52,7 +52,7 @@ const ContactForm: React.FC = () => {
           {/* Left Column - Header and Description */}
           <div className="flex flex-col justify-start">
             <h2 className="header mb-6">Get In Touch</h2>
-            <p className="text text-white/70 leading-relaxed">
+            <p className="text contact-description leading-relaxed">
               Have a project in mind or want to collaborate? I&rsquo;d love to hear from you.
               Fill out the form and I&rsquo;ll get back to you as soon as possible.
             </p>
@@ -106,10 +106,10 @@ const ContactForm: React.FC = () => {
               </button>
 
               {submitStatus === 'success' && (
-                <p className="text-green-400/80 text-sm">Message sent successfully!</p>
+                <p className="text-sm contact-success">Message sent successfully!</p>
               )}
               {submitStatus === 'error' && (
-                <p className="text-red-400/80 text-sm">Failed to send message. Please try again.</p>
+                <p className="text-sm contact-error">Failed to send message. Please try again.</p>
               )}
             </form>
           </div>
