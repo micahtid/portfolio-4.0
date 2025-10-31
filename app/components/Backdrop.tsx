@@ -46,85 +46,27 @@ const Backdrop = () => {
         <rect width="100%" height="100%" fill="url(#grid)" opacity="url(#gridGradient)" />
       </svg>
 
-      {/* Colored Blurs - Minimal and Scattered Throughout */}
+      {/* Stacked Radial Gradients - Stripe Style */}
       <div
-        className="
-          w-[380px] h-[380px]
-          bg-purple-500/[0.06]
-          blur-[95px]
-          absolute top-[2%] left-[5%]"
-      />
-
-      <div
-        className="
-          w-[320px] h-[320px]
-          bg-blue-500/[0.05]
-          blur-[85px]
-          absolute bottom-[5%] right-[8%]"
-      />
-
-      <div
-        className="
-          w-[290px] h-[290px]
-          bg-cyan-500/[0.05]
-          blur-[75px]
-          absolute top-[45%] right-[35%]"
-      />
-
-      <div
-        className="
-          w-[340px] h-[340px]
-          bg-pink-500/[0.05]
-          blur-[88px]
-          absolute top-[25%] right-[5%]"
-      />
-
-      <div
-        className="
-          w-[300px] h-[300px]
-          bg-indigo-500/[0.05]
-          blur-[78px]
-          absolute bottom-[25%] left-[45%]"
-      />
-
-      <div
-        className="
-          w-[270px] h-[270px]
-          bg-violet-500/[0.05]
-          blur-[72px]
-          absolute top-[75%] right-[25%]"
-      />
-
-      <div
-        className="
-          w-[310px] h-[310px]
-          bg-teal-500/[0.05]
-          blur-[80px]
-          absolute top-[12%] right-[50%]"
-      />
-
-      <div
-        className="
-          w-[285px] h-[285px]
-          bg-fuchsia-500/[0.05]
-          blur-[74px]
-          absolute bottom-[45%] left-[15%]"
-      />
-
-      <div
-        className="
-          w-[295px] h-[295px]
-          bg-emerald-500/[0.05]
-          blur-[76px]
-          absolute top-[60%] left-[70%]"
-      />
-
-      <div
-        className="
-          w-[275px] h-[275px]
-          bg-rose-500/[0.05]
-          blur-[70px]
-          absolute bottom-[60%] right-[18%]"
+        className={`absolute inset-0 w-full h-full transition-opacity duration-300 ${
+          theme === 'light' ? 'opacity-[0.18]' : 'opacity-[0.05]'
+        }`}
+        style={{
+          backgroundImage: `
+            radial-gradient(at 40% 20%, hsla(260, 100%, 70%, 1) 0px, transparent 50%),
+            radial-gradient(at 80% 0%, hsla(189, 100%, 56%, 1) 0px, transparent 50%),
+            radial-gradient(at 0% 50%, hsla(355, 100%, 93%, 1) 0px, transparent 50%),
+            radial-gradient(at 80% 50%, hsla(340, 100%, 76%, 1) 0px, transparent 50%),
+            radial-gradient(at 0% 100%, hsla(22, 100%, 77%, 1) 0px, transparent 50%),
+            radial-gradient(at 80% 100%, hsla(242, 100%, 70%, 1) 0px, transparent 50%),
+            radial-gradient(at 0% 0%, hsla(343, 100%, 76%, 1) 0px, transparent 50%),
+            radial-gradient(at 50% 50%, hsla(28, 100%, 74%, 1) 0px, transparent 50%),
+            radial-gradient(at 20% 80%, hsla(189, 100%, 56%, 1) 0px, transparent 50%),
+            radial-gradient(at 90% 30%, hsla(22, 100%, 77%, 1) 0px, transparent 50%),
+            radial-gradient(at 30% 70%, hsla(242, 100%, 70%, 1) 0px, transparent 50%),
+            radial-gradient(at 60% 10%, hsla(340, 100%, 76%, 1) 0px, transparent 50%)
+          `
+        }}
       />
     </div>
   );

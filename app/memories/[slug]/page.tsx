@@ -41,10 +41,12 @@ const MemoryDetail = async ({ params }: PageProps) => {
           {/* Title */}
           <h1 className="header mb-4">{memory.title}</h1>
 
-          {/* Full Description */}
-          <p className="text memory-detail-description leading-relaxed">
-            {memory.fullDescription}
-          </p>
+          {/* Description */}
+          {memory.description && (
+            <p className="text memory-detail-description leading-relaxed">
+              {memory.description}
+            </p>
+          )}
         </div>
       </section>
     </main>

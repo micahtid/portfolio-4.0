@@ -31,7 +31,7 @@ const Navbar = () => {
             onMouseEnter={() => setHoveredIndex(index)}
             onMouseLeave={() => setHoveredIndex(null)}
           >
-            <item.icon className="icon-btn" size={20} />
+            <item.icon className="icon-btn" size={18} />
 
             {/* Tooltip */}
             <div

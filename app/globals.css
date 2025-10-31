@@ -7,7 +7,7 @@
   --color-foreground-light: #0A0A0A;
 }
 
-/* Base Styles... */
+/* Base styles... */
 @layer base {
   html {
     @apply w-full h-full overflow-x-hidden scroll-smooth;

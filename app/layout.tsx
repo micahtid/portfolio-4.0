@@ -3,7 +3,6 @@ import { Plus_Jakarta_Sans, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/Navbar";
 import ModalProvider from "./components/ModalProvider";
-import Backdrop from "./components/Backdrop";
 import ThemeToggle from "./components/ThemeToggle";
 import { ThemeProvider } from "./context/ThemeContext";
 
@@ -37,7 +36,6 @@ export default function RootLayout({
         style={{ fontFamily: 'var(--font-jakarta-sans)' }}
       >
         <ThemeProvider>
-          <Backdrop />
           <ThemeToggle />
           <ModalProvider />
           <Navbar />

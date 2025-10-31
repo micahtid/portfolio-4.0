@@ -23,42 +23,55 @@ const Memories = () => {
             <div className="flex-1 flex flex-col gap-8">
               {memories.map((memory, index) => {
                 if (index % 2 !== 0) return null; // Only even indices
-                return (
-                  <Link href={`/memories/${memory.slug}`} key={memory.slug}>
-                    <div className="border memory-card rounded-lg transition-all duration-300 cursor-pointer">
-                      {/* Image Banner */}
-                      {memory.image ? (
-                        <div className="p-6">
+
+                const cardContent = (
+                  <div className={`border memory-card rounded-lg transition-all duration-300 ${memory.description ? 'cursor-pointer' : ''}`}>
+                    {/* Image Banner */}
+                    {memory.image ? (
+                      <div className="p-6">
+                        <div className="rounded-lg overflow-hidden">
                           <Image
                             src={memory.image}
                             alt={memory.title}
                             width={600}
                             height={400}
-                            className="w-full h-auto object-contain rounded-lg"
-                            style={{ filter: 'blur(0.5px)' }}
+                            className="w-full h-auto object-contain"
+                            style={{ filter: 'blur(1px)' }}
                           />
                         </div>
-                      ) : null}
+                      </div>
+                    ) : null}
 
-                      {/* Content */}
-                      <div className="p-6">
-                        {/* Date */}
-                        {memory.date && (
-                          <p className="label memory-date mb-2">{memory.date}</p>
-                        )}
+                    {/* Content */}
+                    <div className="p-6">
+                      {/* Date */}
+                      {memory.date && (
+                        <p className="label memory-date mb-2">{memory.date}</p>
+                      )}
 
-                        {/* Title */}
-                        <h3 className="memory-title font-semibold text-lg mb-2">
-                          {memory.title}
-                        </h3>
+                      {/* Title */}
+                      <h3 className={`memory-title font-semibold text-lg ${memory.description ? 'mb-2' : ''}`}>
+                        {memory.title}
+                      </h3>
 
-                        {/* Truncated Description */}
+                      {/* Truncated Description */}
+                      {memory.description && (
                         <p className="text memory-description">
                           {truncateDescription(memory.description, 100)}
                         </p>
-                      </div>
+                      )}
                     </div>
+                  </div>
+                );
+
+                return memory.description ? (
+                  <Link href={`/memories/${memory.slug}`} key={memory.slug}>
+                    {cardContent}
                   </Link>
+                ) : (
+                  <div key={memory.slug}>
+                    {cardContent}
+                  </div>
                 );
               })}
             </div>
@@ -67,42 +80,55 @@ const Memories = () => {
             <div className="flex-1 flex flex-col gap-8">
               {memories.map((memory, index) => {
                 if (index % 2 === 0) return null; // Only odd indices
-                return (
-                  <Link href={`/memories/${memory.slug}`} key={memory.slug}>
-                    <div className="border memory-card rounded-lg transition-all duration-300 cursor-pointer">
-                      {/* Image Banner */}
-                      {memory.image ? (
-                        <div className="p-6">
+
+                const cardContent = (
+                  <div className={`border memory-card rounded-lg transition-all duration-300 ${memory.description ? 'cursor-pointer' : ''}`}>
+                    {/* Image Banner */}
+                    {memory.image ? (
+                      <div className="p-6">
+                        <div className="rounded-lg overflow-hidden">
                           <Image
                             src={memory.image}
                             alt={memory.title}
                             width={600}
                             height={400}
-                            className="w-full h-auto object-contain rounded-lg"
-                            style={{ filter: 'blur(0.5px)' }}
+                            className="w-full h-auto object-contain"
+                            style={{ filter: 'blur(1px)' }}
                           />
                         </div>
-                      ) : null}
+                      </div>
+                    ) : null}
 
-                      {/* Content */}
-                      <div className="p-6">
-                        {/* Date */}
-                        {memory.date && (
-                          <p className="label memory-date mb-2">{memory.date}</p>
-                        )}
+                    {/* Content */}
+                    <div className="p-6">
+                      {/* Date */}
+                      {memory.date && (
+                        <p className="label memory-date mb-2">{memory.date}</p>
+                      )}
 
-                        {/* Title */}
-                        <h3 className="memory-title font-semibold text-lg mb-2">
-                          {memory.title}
-                        </h3>
+                      {/* Title */}
+                      <h3 className={`memory-title font-semibold text-lg ${memory.description ? 'mb-2' : ''}`}>
+                        {memory.title}
+                      </h3>
 
-                        {/* Truncated Description */}
+                      {/* Truncated Description */}
+                      {memory.description && (
                         <p className="text memory-description">
                           {truncateDescription(memory.description, 100)}
                         </p>
-                      </div>
+                      )}
                     </div>
+                  </div>
+                );
+
+                return memory.description ? (
+                  <Link href={`/memories/${memory.slug}`} key={memory.slug}>
+                    {cardContent}
                   </Link>
+                ) : (
+                  <div key={memory.slug}>
+                    {cardContent}
+                  </div>
                 );
               })}
             </div>

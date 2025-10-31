@@ -26,18 +26,25 @@ const ContactForm: React.FC = () => {
     setSubmitStatus('idle');
 
     try {
-      // Simulate form submission - replace with actual API call if needed
-      await new Promise(resolve => setTimeout(resolve, 1000));
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
 
-      // Here you would typically send the data to an API endpoint
-      console.log('Form submitted:', formData);
+      if (!response.ok) {
+        throw new Error('Failed to send message');
+      }
 
       setSubmitStatus('success');
       setFormData({ email: '', title: '', description: '' });
 
       // Reset success message after 3 seconds
       setTimeout(() => setSubmitStatus('idle'), 3000);
-    } catch {
+    } catch (error) {
+      console.error('Error submitting form:', error);
       setSubmitStatus('error');
       setTimeout(() => setSubmitStatus('idle'), 3000);
     } finally {
