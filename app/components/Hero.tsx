@@ -28,7 +28,7 @@ const Hero = () => {
       <div className="max-w-5xl w-full px-12 max-[1024px]:px-10 max-[768px]:px-8 max-[640px]:px-6 flex flex-col items-start justify-center gap-8">
         <h3 className='header'>Hey, I&rsquo;m Micah Tidball<br />I build <span style={{ fontFamily: 'var(--font-playfair)', fontStyle: 'italic' }}>full-stack</span> applications</h3>
         <p className="text hero-description max-w-3xl leading-relaxed">
-          I&rsquo;m a full-stack developer passionate about creating beautiful, user-centric applications. With experience building platforms from the ground up, I specialize in React, Node.js, and cloud technologies. Let&rsquo;s build something amazing together.
+          I&rsquo;m a freshman at The Raikes School @ University of Nebraska-Lincoln, majoring in Computer Science and Data Science. In high school, I discovered a passion for building minimal, user-centric applications. I specialize in React with experience in frameworks such as Tailwind CSS and Next.js. I&rsquo;m currently open to project collaborations and seeking Summer 2026 internship opportunities!
         </p>
         <div className="flex gap-6 justify-start flex-wrap max-[640px]:gap-4">
           {buttons.map((button, index) => (
