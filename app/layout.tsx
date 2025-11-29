@@ -28,7 +28,7 @@ export default function RootLayout({
       >
         <LoadingBar />
         <KeyboardNavigation />
-        <div className="max-w-[800px] mx-auto pb-24">
+        <div className="max-w-[800px] mx-auto pb-6">
           <Navigation />
           {children}
         </div>

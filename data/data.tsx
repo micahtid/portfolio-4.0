@@ -1,12 +1,12 @@
 export interface Experience {
   title: string;
-  location: string;
+  position: string;
   duration: string;
   description: string;
   contributions: string[];
   githubLink?: string;
   websiteLink?: string;
-  showcase: boolean;
+  showcase?: boolean;
 }
 
 export interface Project {
@@ -16,7 +16,7 @@ export interface Project {
   technologies: string[];
   githubLink?: string;
   websiteLink?: string;
-  showcase: boolean;
+  showcase?: boolean;
 }
 
 export interface Link {
@@ -27,55 +27,52 @@ export interface Link {
 
 export const experiences: Experience[] = [
   {
-    title: "swe intern @ FindU",
-    location: "lincoln, ne",
-    duration: "jan 2024 - present",
-    description: "midwest b2c startup valued at $2 million",
+    title: "findu",
+    position: "software engineer intern",
+    duration: "sep 2025 - present",
+    description: "tinder for universities - a midwest b2c startup valued at $2 million",
     contributions: [
-      "created scholarship page with swiping algorithm using swift and supabase",
-      "built 1-to-1 react slug implementations of multi-page figma design"
+      "architected scholarship-swiping page with matching algorithm using swift & supabase",
+      "built 1-to-1 slug-based implementations of multi-page figma designs using react"
     ],
-    githubLink: "https://github.com",
-    websiteLink: "https://example.com",
     showcase: true,
-  },
-  {
-    title: "intern",
-    location: "remote",
-    duration: "summer 2023",
-    description: "a startup focused on education technology",
-    contributions: [
-      "developed features for the main platform",
-      "fixed bugs and improved performance"
-    ],
-    showcase: false,
-  },
+  }
 ];
 
 export const projects: Project[] = [
   {
     title: "snipcode",
     date: "2024",
-    description: "a platform for sharing code snippets and collaborating with developers",
-    technologies: ["react", "next.js", "typescript", "tailwind css"],
-    githubLink: "https://github.com",
-    websiteLink: "https://snipcode.dev",
+    description: "a web extension to steal front-end code from any website",
+    technologies: ["react", "node.js", "firebase"],
     showcase: true,
   },
   {
-    title: "portfolio website",
+    title: "mira",
+    date: "feb 2025",
+    description: "a platform for organizations to post / manage volunteer positions and for students to apply. includes 20+ backend functions for database CRUD and subscriptions.",
+    technologies: ["react", "node.js", "firebase", "stripe"],
+  },
+  {
+    title: "restoring rainbows",
+    date: "aug 2024 - jan 2025",
+    description: "an interactive organizational website serving 9,000+ supporters. includes an admin dashboard with 30+ backend functions to manage content across the site and 200+ chapters.",
+    technologies: ["react", "node.js", "firebase", "instagram api", "openstreetmap api"],
+  },
+];
+
+export const hackathons: Project[] = [
+  {
+    title: "cornhacks: banana coin",
     date: "2024",
-    description: "personal portfolio built with next.js and modern animations",
-    technologies: ["next.js", "typescript", "tailwind css"],
-    githubLink: "https://github.com",
-    showcase: true,
+    description: "a gamified artificial trading simulator to compete with friends. involves a depleting currency and random market events.",
+    technologies: ["react", "node.js", "python", "firebase", "redis"],
   },
   {
-    title: "side project",
-    date: "2023",
-    description: "an experimental project for learning new technologies",
-    technologies: ["python", "fastapi"],
-    showcase: false,
+    title: "hack midwest (2nd): beendone",
+    date: "oct 2025",
+    description: "platform to analyze user's startup idea against 5,000+ yc startups.",
+    technologies: ["react", "node.js", "python", "mongodb"],
   },
 ];
 
