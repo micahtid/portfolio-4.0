@@ -15,9 +15,9 @@ export default function Card({
   websiteLink,
 }: CardProps) {
   return (
-    <div className="border border-gray-700 p-6 hover:border-accent transition-colors group">
+    <div className="border border-gray-200 dark:border-gray-700 p-6 hover:border-accent transition-colors group">
       <div className="flex justify-between items-start gap-4 mb-2">
-        <h3 className="text-2xl font-semibold text-white group-hover:text-accent transition-colors">
+        <h3 className="text-2xl font-semibold text-foreground group-hover:text-accent transition-colors">
           {title}
         </h3>
         <div className="flex gap-4 items-center shrink-0 pt-1">

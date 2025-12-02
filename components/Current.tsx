@@ -6,14 +6,14 @@ export default function Current() {
 
   return (
     <section className="w-full pt-16">
-      <h2 className="text-2xl font-bold text-white mb-8">
+      <h2 className="text-2xl font-bold text-foreground mb-8">
         <span className="text-accent">*</span> current
       </h2>
       <div className="flex flex-col gap-8">
         {/* Experiences */}
         {featuredExperiences.map((exp, index) => (
           <div key={`exp-${index}`} className="flex flex-col gap-3">
-            <h3 className="text-lg font-semibold text-white">{exp.title}</h3>
+            <h3 className="text-lg font-semibold text-foreground">{exp.title}</h3>
             <div className="text-sm text-gray">
               {exp.position} ({exp.duration})
             </div>
@@ -24,7 +24,7 @@ export default function Current() {
         {/* Projects */}
         {featuredProjects.map((project, index) => (
           <div key={`proj-${index}`} className="flex flex-col gap-3">
-            <h3 className="text-lg font-semibold text-white">{project.title}</h3>
+            <h3 className="text-lg font-semibold text-foreground">{project.title}</h3>
             <div className="text-sm text-gray">{project.date}</div>
             <p className="text-sm text-gray-light">{project.description}</p>
           </div>

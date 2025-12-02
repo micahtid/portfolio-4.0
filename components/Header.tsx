@@ -12,13 +12,13 @@ export default function Header() {
     <header className="w-full">
       <div className="flex flex-col items-start gap-6">
         {/* main heading */}
-        <h1 className="text-4xl font-bold text-white">
+        <h1 className="text-4xl font-bold text-foreground">
           <DecryptedText
             text="hi, i'm micah"
             animateOn="view"
             speed={35}
             maxIterations={1}
-            className="text-white"
+            className="text-foreground"
             encryptedClassName="text-gray"
           />
         </h1>

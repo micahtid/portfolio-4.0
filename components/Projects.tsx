@@ -17,15 +17,15 @@ export default function Projects({ showcaseOnly = false, showTitle = true, data 
   return (
     <section className="w-full py-10">
       {showTitle && (
-        <h2 className="text-2xl font-bold text-white mb-8">
+        <h2 className="text-2xl font-bold text-foreground mb-8">
           <span className="text-accent">*</span> projects
         </h2>
       )}
       <div className="flex flex-col gap-6">
         {filteredProjects.map((project, index) => (
-          <div key={index} className="border border-gray-700 p-6 hover:border-accent transition-colors group">
+          <div key={index} className="border border-gray-200 dark:border-gray-700 p-6 hover:border-accent transition-colors group">
             <div className="flex justify-between items-start gap-4 mb-2">
-              <h3 className="text-2xl font-semibold text-white group-hover:text-accent transition-colors">
+              <h3 className="text-2xl font-semibold text-foreground group-hover:text-accent transition-colors">
                 {project.title}
               </h3>
               <div className="flex gap-4 items-center shrink-0 pt-1">
@@ -60,12 +60,12 @@ export default function Projects({ showcaseOnly = false, showTitle = true, data 
 
               {/* technologies */}
               <div className="mt-2">
-                <h4 className="text-base font-semibold text-white mb-3">technologies</h4>
+                <h4 className="text-base font-semibold text-foreground mb-3">technologies</h4>
                 <div className="flex flex-wrap gap-2">
                   {project.technologies.map((tech, techIndex) => (
                     <span
                       key={techIndex}
-                      className="text-xs text-gray bg-[#1a1a1a] px-2 py-1"
+                      className="text-xs text-gray bg-gray-100 dark:bg-[#1a1a1a] px-2 py-1"
                     >
                       {tech}
                     </span>

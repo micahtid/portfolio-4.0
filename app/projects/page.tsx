@@ -11,10 +11,8 @@ export default function ProjectsPage() {
       />
       <Projects showcaseOnly={false} showTitle={false} />
 
-      <div className="mt-10">
-        <p className="text-gray-200 text-sm">things i built in 24 hours</p>
-        <Projects showcaseOnly={false} showTitle={false} data={hackathons} />
-      </div>
+      <p className="text-gray text-sm">things i built in 24 hours</p>
+      <Projects showcaseOnly={false} showTitle={false} data={hackathons} />
     </div>
   );
 }

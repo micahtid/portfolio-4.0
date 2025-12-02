@@ -15,15 +15,15 @@ export default function Experience({ showcaseOnly = false, showTitle = true }: E
   return (
     <section className="w-full py-10">
       {showTitle && (
-        <h2 className="text-2xl font-bold text-white mb-8">
+        <h2 className="text-2xl font-bold text-foreground mb-8">
           <span className="text-accent">*</span> experience
         </h2>
       )}
       <div className="flex flex-col gap-6">
         {filteredExperiences.map((exp, index) => (
-          <div key={index} className="border border-gray-700 p-6 hover:border-accent transition-colors group">
+          <div key={index} className="border border-gray-200 dark:border-gray-700 p-6 hover:border-accent transition-colors group">
             <div className="flex justify-between items-start gap-4 mb-2">
-              <h3 className="text-2xl font-semibold text-white group-hover:text-accent transition-colors">
+              <h3 className="text-2xl font-semibold text-foreground group-hover:text-accent transition-colors">
                 {exp.title}
               </h3>
               <div className="flex gap-4 items-center shrink-0 pt-1">
@@ -58,7 +58,7 @@ export default function Experience({ showcaseOnly = false, showTitle = true }: E
 
               {/* contributions */}
               <div className="mt-2">
-                <h4 className="text-base font-semibold text-white mb-2">contributions</h4>
+                <h4 className="text-base font-semibold text-foreground mb-2">contributions</h4>
                 <ul className="flex flex-col gap-2">
                   {exp.contributions.map((contribution, idx) => (
                     <li key={idx} className="text-sm text-gray flex gap-3 items-baseline">

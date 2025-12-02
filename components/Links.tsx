@@ -3,7 +3,7 @@ import { links } from '@/data/data';
 export default function Links() {
   return (
     <section className="w-full pt-16">
-      <h2 className="text-2xl font-bold text-white mb-4">
+      <h2 className="text-2xl font-bold text-foreground mb-4">
         <span className="text-accent">*</span> links
       </h2>
       <div className="flex gap-4 text-gray text-sm">

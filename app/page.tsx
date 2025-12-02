@@ -4,7 +4,7 @@ import Links from "@/components/Links";
 
 export default function Home() {
   return (
-    <div className="min-h-screen">
+    <div className="mb-16">
       <Header />
       <Current />
       <Links />

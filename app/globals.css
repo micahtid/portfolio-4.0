@@ -1,6 +1,16 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 :root {
+  --background: #ffffff;
+  --foreground: #0a0a0a;
+  --accent: #a855f7;
+  --gray: #525252;
+  --gray-light: #404040;
+}
+
+.dark {
   --background: #0a0a0a;
   --foreground: #fafafa;
   --accent: #a855f7;
@@ -18,20 +28,13 @@
   --color-gray-light: var(--gray-light);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #fafafa;
-    --accent: #a855f7;
-    --gray: #a3a3a3;
-    --gray-light: #cccccc;
-  }
-}
-
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-roboto-mono), monospace;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
 }
 
 /* nprogress loading bar styling */
