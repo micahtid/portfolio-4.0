@@ -10,17 +10,19 @@ interface PageHeaderProps {
 export default function PageHeader({ title, description }: PageHeaderProps) {
   return (
     <div className="w-full">
-      <h1 className="text-4xl font-bold text-foreground mb-4">
-        <DecryptedText
-          text={title}
-          animateOn="view"
-          speed={35}
-          maxIterations={1}
-          className="text-foreground"
-          encryptedClassName="text-gray"
-        />
-      </h1>
-      <p className="text-gray text-sm">{description}</p>
+      <div className="flex flex-col items-start gap-6">
+        <h1 className="text-4xl font-bold text-foreground">
+          <DecryptedText
+            text={title}
+            animateOn="view"
+            speed={35}
+            maxIterations={1}
+            className="text-foreground"
+            encryptedClassName="text-gray"
+          />
+        </h1>
+        <p className="text-gray-light leading-relaxed">{description}</p>
+      </div>
     </div>
   );
 }

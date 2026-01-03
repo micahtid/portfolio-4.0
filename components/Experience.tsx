@@ -54,19 +54,12 @@ export default function Experience({ showcaseOnly = false, showTitle = true }: E
               <div className="text-sm text-gray">
                 {exp.position} ({exp.duration})
               </div>
-              <p className="text-sm text-gray-light">{exp.description}</p>
+              <p className="text-sm text-gray-light leading-relaxed">{exp.description}</p>
 
               {/* contributions */}
               <div className="mt-2">
                 <h4 className="text-base font-semibold text-foreground mb-2">contributions</h4>
-                <ul className="flex flex-col gap-2">
-                  {exp.contributions.map((contribution, idx) => (
-                    <li key={idx} className="text-sm text-gray flex gap-3 items-baseline">
-                      <span className="text-gray text-sm leading-none">•</span>
-                      <span>{contribution}</span>
-                    </li>
-                  ))}
-                </ul>
+                {exp.contributions}
               </div>
             </div>
           </div>

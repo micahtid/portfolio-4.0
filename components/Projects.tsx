@@ -54,9 +54,9 @@ export default function Projects({ showcaseOnly = false, showTitle = true, data 
 
             <div className="flex flex-col gap-4">
               <div className="text-sm text-gray">
-                {project.date}
+                {project.duration}
               </div>
-              <p className="text-sm text-gray-light">{project.description}</p>
+              <p className="text-sm text-gray-light leading-relaxed">{project.description}</p>
 
               {/* technologies */}
               <div className="mt-2">

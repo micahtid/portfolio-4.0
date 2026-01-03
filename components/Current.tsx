@@ -13,20 +13,17 @@ export default function Current() {
         {/* Experiences */}
         {featuredExperiences.map((exp, index) => (
           <div key={`exp-${index}`} className="flex flex-col gap-3">
-            <h3 className="text-lg font-semibold text-foreground">{exp.title}</h3>
+            <h3 className="text-2xl font-semibold text-foreground">{exp.title}</h3>
             <div className="text-sm text-gray">
               {exp.position} ({exp.duration})
             </div>
-            <p className="text-sm text-gray-light">{exp.description}</p>
           </div>
         ))}
 
         {/* Projects */}
         {featuredProjects.map((project, index) => (
           <div key={`proj-${index}`} className="flex flex-col gap-3">
-            <h3 className="text-lg font-semibold text-foreground">{project.title}</h3>
-            <div className="text-sm text-gray">{project.date}</div>
-            <p className="text-sm text-gray-light">{project.description}</p>
+            <h3 className="text-2xl font-semibold text-foreground">{project.title}</h3>
           </div>
         ))}
       </div>

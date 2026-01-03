@@ -30,6 +30,10 @@ export default function KeyboardNavigation() {
           NProgress.start();
           router.push('/projects');
           break;
+        case 'b':
+          NProgress.start();
+          router.push('/blogs');
+          break;
       }
     };
 

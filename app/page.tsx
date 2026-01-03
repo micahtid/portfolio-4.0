@@ -4,7 +4,7 @@ import Links from "@/components/Links";
 
 export default function Home() {
   return (
-    <div className="mb-16">
+    <div>
       <Header />
       <Current />
       <Links />
