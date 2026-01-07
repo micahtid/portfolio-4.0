@@ -22,7 +22,10 @@ export default function Projects({ showcaseOnly = false, showTitle = true, data 
         </h2>
       )}
       <div className="flex flex-col gap-6">
-        {filteredProjects.map((project, index) => (
+        {filteredProjects.map((project, index) => {
+          const technologies = project.technologies ?? [];
+
+          return (
           <div key={index} className="border border-gray-200 dark:border-gray-700 p-6 hover:border-accent transition-colors group">
             <div className="flex justify-between items-start gap-4 mb-2">
               <h3 className="text-2xl font-semibold text-foreground group-hover:text-accent transition-colors">
@@ -59,22 +62,25 @@ export default function Projects({ showcaseOnly = false, showTitle = true, data 
               <p className="text-sm text-gray-light leading-relaxed">{project.description}</p>
 
               {/* technologies */}
-              <div className="mt-2">
-                <h4 className="text-base font-semibold text-foreground mb-3">technologies</h4>
-                <div className="flex flex-wrap gap-2">
-                  {project.technologies.map((tech, techIndex) => (
-                    <span
-                      key={techIndex}
-                      className="text-xs text-gray bg-gray-100 dark:bg-[#1a1a1a] px-2 py-1"
-                    >
-                      {tech}
-                    </span>
-                  ))}
+              {technologies.length > 0 && (
+                <div className="mt-2">
+                  <h4 className="text-base font-semibold text-foreground mb-3">technologies</h4>
+                  <div className="flex flex-wrap gap-2">
+                    {technologies.map((tech, techIndex) => (
+                      <span
+                        key={techIndex}
+                        className="text-xs text-gray bg-gray-100 dark:bg-[#1a1a1a] px-2 py-1"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
                 </div>
-              </div>
+              )}
             </div>
           </div>
-        ))}
+          );
+        })}
       </div>
     </section>
   );
