@@ -35,7 +35,7 @@ export default function ExperienceCard({
                 </Link>
             )}
 
-            <h3 className="text-lg font-bold text-slate-800 mb-2">{title}</h3>
+            <h3 className="text-lg font-bold text-slate-800 mb-1">{title}</h3>
             <div className="flex justify-between items-center mb-2">
                 <span className="text-slate-700 font-semibold">{position}</span>
                 <span className="text-slate-700 font-semibold">{dateRange}</span>

@@ -38,7 +38,7 @@ export default function ExperimentCard({
                         unoptimized
                     />
                 ) : (
-                    <div className="w-full h-48 bg-slate-300 flex items-center justify-center rounded-xl">
+                    <div className="w-full aspect-video bg-slate-300 flex items-center justify-center rounded-xl">
                         {placeholderIcon}
                     </div>
                 )}

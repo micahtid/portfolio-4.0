@@ -15,23 +15,25 @@ interface NavItem {
 
 const navItems: NavItem[] = [
     {
-        href: "#",
+        href: "https://calendly.com/tidballmicah/30min",
         icon: <PiCoffeeBeanFill size={22} />,
         title: "Coffee Chat",
+        external: true,
     },
     {
-        href: "https://linkedin.com",
+        href: "https://www.linkedin.com/in/micah-tidball-a1b28231b/",
         icon: <FaLinkedin size={22} />,
         title: "LinkedIn",
         external: true,
     },
     {
-        href: "#",
+        href: "/resume.pdf",
         icon: <FiPaperclip size={22} />,
         title: "Resume",
+        external: true,
     },
     {
-        href: "https://github.com",
+        href: "https://github.com/micahtid",
         icon: <FaGithub size={22} />,
         title: "GitHub",
         external: true,

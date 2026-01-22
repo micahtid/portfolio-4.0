@@ -16,8 +16,8 @@ const rockSalt = Rock_Salt({
 });
 
 export const metadata: Metadata = {
-  title: "Micah Tidball | Portfolio",
-  description: "Personal portfolio of Micah Tidball - Raikes School student, Computer Science & Data, Full-stack Developer",
+  title: "Micah's Page",
+  description: "Micah Tidball's personal portfolio.",
 };
 
 export const viewport: Viewport = {
