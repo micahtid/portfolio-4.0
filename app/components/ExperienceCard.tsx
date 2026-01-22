@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { FiArrowUpRight } from "react-icons/fi";
 
 interface ExperienceCardProps {
@@ -17,19 +18,21 @@ export default function ExperienceCard({
     technologies,
     link,
 }: ExperienceCardProps) {
+    const isExternal = link?.startsWith("http");
+
     return (
         <div className="relative bg-gradient-to-b from-[#e9eef4] to-[#F1F5F9] rounded-2xl p-5 sm:p-6">
             {/* Learn More Button */}
             {link && (
-                <a
+                <Link
                     href={link}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    target={isExternal ? "_blank" : undefined}
+                    rel={isExternal ? "noopener noreferrer" : undefined}
                     className="absolute -top-1 -right-1 sm:-top-3 sm:-right-3 w-8 h-8 sm:w-10 sm:h-10 bg-black/80 text-white rounded-full flex items-center justify-center hover:bg-black transition-colors"
                     title="Learn more"
                 >
                     <FiArrowUpRight size={18} />
-                </a>
+                </Link>
             )}
 
             <h3 className="text-lg font-bold text-slate-800 mb-2">{title}</h3>

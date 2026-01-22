@@ -13,7 +13,7 @@ const experiences = [
     description:
       "Building a fintech platform to help students manage finances and build credit. Led development of the full-stack application from concept to MVP.",
     technologies: ["React", "Node.js", "PostgreSQL", "TypeScript", "AWS"],
-    link: "#",
+    link: "/experience/moneiva",
   },
   {
     title: "FindU",
@@ -22,7 +22,7 @@ const experiences = [
     description:
       "Developed features for a social discovery platform connecting students with similar interests. Implemented real-time chat and matching algorithms.",
     technologies: ["Next.js", "Firebase", "Tailwind CSS", "WebSocket"],
-    link: "#",
+    link: "/experience/findu",
   },
 ];
 
@@ -32,13 +32,17 @@ const experiments = [
     description:
       "A real-time chat application for students to connect and collaborate on projects.",
     gifSrc: "/gifs/me2.gif",
+    githubLink: "#",
+    websiteLink: "#",
   },
   {
     title: "Mira",
     description:
       "An AI-powered personal assistant for productivity and task management.",
     gifSrc: "/gifs/mira.gif",
-    link: "#",
+    link: "/mira",
+    githubLink: "#",
+    websiteLink: "#",
   },
   {
     title: "Coming Soon",

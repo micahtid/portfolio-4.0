@@ -1,5 +1,7 @@
+import Link from "next/link";
 import Image from "next/image";
 import { ReactNode } from "react";
+import { FaGithub, FaGlobe } from "react-icons/fa";
 
 interface ExperimentCardProps {
     title: string;
@@ -7,6 +9,8 @@ interface ExperimentCardProps {
     gifSrc?: string;
     placeholderIcon?: ReactNode;
     link?: string;
+    githubLink?: string;
+    websiteLink?: string;
 }
 
 export default function ExperimentCard({
@@ -15,7 +19,11 @@ export default function ExperimentCard({
     gifSrc,
     placeholderIcon,
     link,
+    githubLink,
+    websiteLink,
 }: ExperimentCardProps) {
+    const isExternal = link?.startsWith("http");
+
     return (
         <div className="flex flex-col items-center">
             {/* Preview */}
@@ -41,22 +49,45 @@ export default function ExperimentCard({
 
             {/* Description */}
             <div className="w-full bg-slate-200 rounded-xl pt-11 px-4 pb-4 -mt-2">
-                <p className="text-slate-600 text-sm">
+                <p className="text-slate-600 text-sm mb-3">
                     {description}
                     {link && (
                         <>
                             {" "}
-                            <a
+                            <Link
                                 href={link}
-                                target="_blank"
-                                rel="noopener noreferrer"
+                                target={isExternal ? "_blank" : undefined}
+                                rel={isExternal ? "noopener noreferrer" : undefined}
                                 className="underline"
                             >
                                 Read more.
-                            </a>
+                            </Link>
                         </>
                     )}
                 </p>
+                {/* Social Icons */}
+                <div className="flex gap-3">
+                    {githubLink && (
+                        <a
+                            href={githubLink}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-slate-400 hover:text-slate-600 transition-colors"
+                        >
+                            <FaGithub size={20} />
+                        </a>
+                    )}
+                    {websiteLink && (
+                        <a
+                            href={websiteLink}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-slate-400 hover:text-slate-600 transition-colors"
+                        >
+                            <FaGlobe size={20} />
+                        </a>
+                    )}
+                </div>
             </div>
         </div>
     );
