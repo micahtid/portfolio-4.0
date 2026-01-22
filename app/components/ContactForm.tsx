@@ -1,9 +1,9 @@
 export default function ContactForm() {
     return (
-        <div className="bg-gradient-to-b from-[#e9eef4] to-[#F1F5F9] rounded-t-2xl p-6 pb-36 mt-24">
+        <div className="bg-gradient-to-b from-[#e9eef4] to-[#F1F5F9] rounded-t-2xl px-4 pt-6 sm:px-6 pb-44 mt-16 sm:mt-24">
             <form className="space-y-4 max-w-2xl mx-auto">
-                {/* Name and Email Row */}
-                <div className="flex gap-4">
+                {/* Name and Email Row - stack on mobile, side by side on larger */}
+                <div className="flex flex-col sm:flex-row gap-4">
                     <input
                         type="text"
                         placeholder="Name"

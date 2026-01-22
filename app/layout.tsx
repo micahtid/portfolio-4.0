@@ -1,6 +1,7 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Plus_Jakarta_Sans, Rock_Salt } from "next/font/google";
 import "./globals.css";
+import ScreenSizeChecker from "./components/ScreenSizeChecker";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
   variable: "--font-primary",
@@ -19,6 +20,13 @@ export const metadata: Metadata = {
   description: "Personal portfolio of Micah Tidball - Raikes School student, Computer Science & Data, Full-stack Developer",
 };
 
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+  userScalable: false,
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -30,6 +38,7 @@ export default function RootLayout({
         className={`${plusJakartaSans.variable} ${rockSalt.variable} antialiased`}
         suppressHydrationWarning
       >
+        <ScreenSizeChecker />
         {children}
       </body>
     </html>

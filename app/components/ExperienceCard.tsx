@@ -1,9 +1,12 @@
+import { FiArrowUpRight } from "react-icons/fi";
+
 interface ExperienceCardProps {
     title: string;
     position: string;
     dateRange: string;
     description: string;
     technologies: string[];
+    link?: string;
 }
 
 export default function ExperienceCard({
@@ -12,9 +15,23 @@ export default function ExperienceCard({
     dateRange,
     description,
     technologies,
+    link,
 }: ExperienceCardProps) {
     return (
-        <div className="bg-gradient-to-b from-[#e9eef4] to-[#F1F5F9] rounded-2xl p-6">
+        <div className="relative bg-gradient-to-b from-[#e9eef4] to-[#F1F5F9] rounded-2xl p-5 sm:p-6">
+            {/* Learn More Button */}
+            {link && (
+                <a
+                    href={link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="absolute -top-1 -right-1 sm:-top-3 sm:-right-3 w-8 h-8 sm:w-10 sm:h-10 bg-black/80 text-white rounded-full flex items-center justify-center hover:bg-black transition-colors"
+                    title="Learn more"
+                >
+                    <FiArrowUpRight size={18} />
+                </a>
+            )}
+
             <h3 className="text-lg font-bold text-slate-800 mb-2">{title}</h3>
             <div className="flex justify-between items-center mb-2">
                 <span className="text-slate-700 font-semibold">{position}</span>

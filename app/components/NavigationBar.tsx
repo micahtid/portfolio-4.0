@@ -93,12 +93,12 @@ export default function NavigationBar() {
     const mouseX = useMotionValue(Infinity);
 
     return (
-        <nav className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50">
+        <nav className="fixed bottom-6 left-1/2 -translate-x-1/2 z-[100] w-max max-w-[90vw]">
             <div
                 onMouseMove={(e) => mouseX.set(e.pageX)}
                 onMouseLeave={() => mouseX.set(Infinity)}
                 style={{ backdropFilter: 'blur(4px)' }}
-                className="bg-black/5 border border-gray-500/10 rounded-full px-4 h-[72px] flex items-end pb-3 gap-3 overflow-visible"
+                className="bg-black/5 border border-gray-500/10 rounded-full px-3 sm:px-4 h-[72px] flex items-end pb-3 gap-2 sm:gap-3 overflow-visible"
             >
                 {navItems.map((item) => (
                     <NavIcon key={item.title} item={item} mouseX={mouseX} />

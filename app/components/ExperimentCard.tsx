@@ -6,6 +6,7 @@ interface ExperimentCardProps {
     description: string;
     gifSrc?: string;
     placeholderIcon?: ReactNode;
+    link?: string;
 }
 
 export default function ExperimentCard({
@@ -13,6 +14,7 @@ export default function ExperimentCard({
     description,
     gifSrc,
     placeholderIcon,
+    link,
 }: ExperimentCardProps) {
     return (
         <div className="flex flex-col items-center">
@@ -39,7 +41,22 @@ export default function ExperimentCard({
 
             {/* Description */}
             <div className="w-full bg-slate-200 rounded-xl pt-11 px-4 pb-4 -mt-2">
-                <p className="text-slate-600 text-sm">{description}</p>
+                <p className="text-slate-600 text-sm">
+                    {description}
+                    {link && (
+                        <>
+                            {" "}
+                            <a
+                                href={link}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="underline"
+                            >
+                                Read more.
+                            </a>
+                        </>
+                    )}
+                </p>
             </div>
         </div>
     );
