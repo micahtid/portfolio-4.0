@@ -25,18 +25,21 @@ export default function ExperimentCard({
     const isExternal = link?.startsWith("http");
 
     return (
-        <div className="flex flex-col items-center">
+        <div className="flex flex-col items-center group">
             {/* Preview */}
             <div className="relative w-[calc(100%+16px)] border-[3px] border-slate-200 rounded-2xl overflow-visible bg-white shadow-[0_4px_12px_rgba(0,0,0,0.08)]">
                 {gifSrc ? (
-                    <Image
-                        src={gifSrc}
-                        alt={title}
-                        width={500}
-                        height={300}
-                        className="w-full h-auto rounded-xl"
-                        unoptimized
-                    />
+                    <>
+                        <Image
+                            src={gifSrc}
+                            alt={title}
+                            width={500}
+                            height={300}
+                            className="w-full h-auto rounded-xl"
+                            unoptimized
+                        />
+                        <div className="absolute inset-0 bg-black/10 rounded-xl transition-opacity duration-300 pointer-events-none opacity-100 group-hover:opacity-0" />
+                    </>
                 ) : (
                     <div className="w-full aspect-video bg-slate-300 flex items-center justify-center rounded-xl">
                         {placeholderIcon}

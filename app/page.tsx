@@ -74,15 +74,12 @@ export default function Home() {
           name="Micah Tidball"
           description={
             <>
-              I&apos;m a freshman at the{" "}
-              <a href="https://raikes.unl.edu" target="_blank" rel="noopener noreferrer" className="underline">
-                Raikes School
-              </a>{" "}
-              @{" "}
+              I&apos;m a freshman at the {" "}
               <a href="https://www.unl.edu" target="_blank" rel="noopener noreferrer" className="underline">
                 University of Nebraska-Lincoln
               </a>{" "}
-              studying Computer Science and Data. I build random full-stack applications in my free time.
+              studying Computer Science and Data. I ship full-stack applications in my free time.
+              Check out my <a href="/blog" rel="noopener noreferrer" className="underline">blog</a>!
             </>
           }
         />

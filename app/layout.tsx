@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Plus_Jakarta_Sans, Rock_Salt } from "next/font/google";
 import "./globals.css";
 import ScreenSizeChecker from "./components/ScreenSizeChecker";
+import Decoration from "./components/Decoration";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
   variable: "--font-primary",
@@ -38,6 +39,7 @@ export default function RootLayout({
         className={`${plusJakartaSans.variable} ${rockSalt.variable} antialiased`}
         suppressHydrationWarning
       >
+        <Decoration />
         <ScreenSizeChecker />
         {children}
       </body>

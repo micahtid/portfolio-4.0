@@ -11,7 +11,7 @@ export default function Hero({ imageSrc, name, description }: HeroProps) {
     return (
         <section className="flex flex-col items-start text-left mb-12 sm:mb-20">
             {/* Profile Image */}
-            <div className="w-20 h-20 sm:w-28 sm:h-28 rounded-full overflow-hidden mb-4 sm:mb-6 border-4 border-white">
+            <div className="w-20 h-20 sm:w-28 sm:h-28 rounded-full overflow-hidden mb-4 sm:mb-6 border-4 border-gray-300/50">
                 <Image
                     src={imageSrc}
                     alt={name}
@@ -28,7 +28,7 @@ export default function Hero({ imageSrc, name, description }: HeroProps) {
             </h1>
 
             {/* Description */}
-            <p className="max-w-lg text-base sm:text-lg text-slate-600 leading-relaxed">
+            <p className="max-w-2xl text-base sm:text-lg text-slate-600 leading-relaxed">
                 {description}
             </p>
         </section>
