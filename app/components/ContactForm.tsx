@@ -1,6 +1,6 @@
 export default function ContactForm() {
     return (
-        <div className="bg-gradient-to-b from-[#e9eef4] to-[#F1F5F9] rounded-t-2xl px-4 pt-6 sm:px-6 pb-44 mt-16 sm:mt-24">
+        <div className="bg-gradient-to-b from-[#F3F3F3] to-[#FFFFFF] rounded-t-2xl px-4 pt-6 sm:px-6 pb-44 mt-16 sm:mt-24 border-x border-t border-[#F3F3F3]">
             <form
                 action="mailto:tidballmicah@gmail.com"
                 method="post"
@@ -13,14 +13,14 @@ export default function ContactForm() {
                         type="text"
                         name="name"
                         placeholder="Name"
-                        className="flex-1 px-4 py-3 rounded-xl border-2 border-slate-200 bg-white/50 text-sm font-[inherit] focus:outline-none focus:border-blue-500 placeholder:text-slate-400"
+                        className="flex-1 px-4 py-3 rounded-xl border-2 border-neutral-200 bg-white/50 text-sm font-[inherit] focus:outline-none focus:border-blue-500 placeholder:text-neutral-400"
                         required
                     />
                     <input
                         type="email"
                         name="email"
                         placeholder="Email"
-                        className="flex-1 px-4 py-3 rounded-xl border-2 border-slate-200 bg-white/50 text-sm font-[inherit] focus:outline-none focus:border-blue-500 placeholder:text-slate-400"
+                        className="flex-1 px-4 py-3 rounded-xl border-2 border-neutral-200 bg-white/50 text-sm font-[inherit] focus:outline-none focus:border-blue-500 placeholder:text-neutral-400"
                         required
                     />
                 </div>
@@ -31,7 +31,7 @@ export default function ContactForm() {
                         name="message"
                         placeholder="Message"
                         rows={3}
-                        className="w-full px-4 py-3 rounded-xl border-2 border-slate-200 bg-white/50 text-sm font-[inherit] resize-none focus:outline-none focus:border-blue-500 placeholder:text-slate-400"
+                        className="w-full px-4 py-3 rounded-xl border-2 border-neutral-200 bg-white/50 text-sm font-[inherit] resize-none focus:outline-none focus:border-blue-500 placeholder:text-neutral-400"
                         required
                     />
                 </div>

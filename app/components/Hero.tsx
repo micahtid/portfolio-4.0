@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { ReactNode } from "react";
+import { FiArrowUpRight } from "react-icons/fi";
 
 interface HeroProps {
     imageSrc: string;
@@ -23,13 +24,32 @@ export default function Hero({ imageSrc, name, description }: HeroProps) {
             </div>
 
             {/* Name */}
-            <h1 className="text-2xl sm:text-4xl font-semibold text-slate-800 mb-2 sm:mb-3">
-                Hey, I&apos;m <span className="font-accent text-xl sm:text-3xl ml-1 sm:ml-2">{name}</span>
+            <h1 className="text-2xl sm:text-4xl font-semibold text-neutral-800 mb-2 sm:mb-3">
+                Hey, I&apos;m {name}
             </h1>
 
             {/* Description */}
-            <p className="max-w-2xl text-base sm:text-lg text-slate-600 leading-relaxed">
-                {description}
+            <p className="max-w-2xl text-base sm:text-lg text-neutral-600 leading-relaxed">
+                I&apos;m a freshman at the{" "}
+                <a
+                    href="https://www.unl.edu"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center text-neutral-900 decoration-neutral-300 underline underline-offset-4 hover:decoration-neutral-500 transition-colors"
+                >
+                    <img src="/nebraska.png" alt="" className="w-4 h-4 mr-1 inline-block" />
+                    University of Nebraska-Lincoln
+                </a>{" "}
+                studying Computer Science and Data. I ship full-stack applications in my free time.
+                Check out my{" "}
+                <a
+                    href="/blog"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center text-neutral-900 decoration-neutral-300 underline underline-offset-4 hover:decoration-neutral-500 transition-colors"
+                >
+                    <FiArrowUpRight className="mr-0.5 w-4 h-4 inline-block" />
+                    blog
+                </a>!
             </p>
         </section>
     );

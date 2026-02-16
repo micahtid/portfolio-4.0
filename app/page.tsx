@@ -1,4 +1,4 @@
-import { FiCode } from "react-icons/fi";
+import { FiCode, FiArrowUpRight } from "react-icons/fi";
 import Hero from "./components/Hero";
 import ExperienceCard from "./components/ExperienceCard";
 import ExperimentCard from "./components/ExperimentCard";
@@ -6,6 +6,7 @@ import ContactForm from "./components/ContactForm";
 import NavigationBar from "./components/NavigationBar";
 
 const experiences = [
+  /*
   {
     title: "Moneiva",
     position: "Software Engineer Intern",
@@ -14,6 +15,7 @@ const experiences = [
     technologies: ["React", "Dart", "AWS Services", "AI Platforms"],
     link: "/experience/moneiva",
   },
+  */
   {
     title: "FindU",
     position: "Software Engineer",
@@ -28,12 +30,12 @@ const experiments = [
   {
     title: "Glyph",
     description: "Coming soon!",
-    placeholderIcon: <FiCode className="text-slate-500 text-4xl" />,
+    placeholderIcon: <FiCode className="text-neutral-500 text-4xl" />,
   },
   {
     title: "SnipCode",
     description: "Coming soon!",
-    placeholderIcon: <FiCode className="text-slate-500 text-4xl" />,
+    placeholderIcon: <FiCode className="text-neutral-500 text-4xl" />,
   },
   {
     title: "Restoring Rainbows",
@@ -47,9 +49,9 @@ const experiments = [
     description:
       "A volunteer platform for youth-led organizations to create and track internship and volunteer opportunities.",
     gifSrc: "/gifs/mira.gif",
-    link: "/mira",
     githubLink: "https://github.com/micahtid/mira",
   },
+  /*
   {
     title: "Me2",
     description:
@@ -57,6 +59,7 @@ const experiments = [
     gifSrc: "/gifs/me2.gif",
     githubLink: "https://github.com/micahtid/me2",
   },
+  */
 ];
 
 export default function Home() {
@@ -72,21 +75,12 @@ export default function Home() {
         <Hero
           imageSrc="/profile.jpg"
           name="Micah Tidball"
-          description={
-            <>
-              I&apos;m a freshman at the {" "}
-              <a href="https://www.unl.edu" target="_blank" rel="noopener noreferrer" className="underline">
-                University of Nebraska-Lincoln
-              </a>{" "}
-              studying Computer Science and Data. I ship full-stack applications in my free time.
-              Check out my <a href="/blog" rel="noopener noreferrer" className="underline">blog</a>!
-            </>
-          }
+          description="I'm a freshman at the University of Nebraska-Lincoln studying Computer Science and Data. I ship full-stack applications in my free time. Check out my blog!"
         />
 
         {/* Experience Section */}
         <section className="mb-12 sm:mb-20">
-          <h2 className="text-2xl font-bold text-slate-800 mb-6">Work Experience</h2>
+          <h2 className="text-2xl font-bold text-neutral-800 mb-6">Work Experience</h2>
           <div className="space-y-6">
             {experiences.map((exp) => (
               <ExperienceCard key={exp.title} {...exp} />
@@ -96,8 +90,19 @@ export default function Home() {
 
         {/* Experiments Section */}
         <section className="mb-12 sm:mb-20">
-          <h2 className="text-2xl font-bold text-slate-800 mb-2">Experiments</h2>
-          <p className="text-slate-600 mb-6">A few selected projects!</p>
+          <h2 className="text-2xl font-bold text-neutral-800 mb-2">Experiments</h2>
+          <p className="text-neutral-600 mb-6">
+            A few selected projects! View all{" "}
+            <a
+              href="https://github.com/micahtid"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center text-neutral-900 decoration-neutral-300 underline underline-offset-4 hover:decoration-neutral-500 transition-colors"
+            >
+              <FiArrowUpRight className="mr-0.5 w-4 h-4 inline-block" />
+              here
+            </a>.
+          </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
             {/* Left Column */}
             <div className="flex flex-col gap-8">

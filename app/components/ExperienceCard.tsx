@@ -21,7 +21,7 @@ export default function ExperienceCard({
     const isExternal = link?.startsWith("http");
 
     return (
-        <div className="relative bg-gradient-to-b from-[#e9eef4] to-[#F1F5F9] rounded-2xl p-5 sm:p-6">
+        <div className="relative bg-gradient-to-b from-[#F3F3F3] to-[#FFFFFF] rounded-2xl p-5 sm:p-6 border border-[#F3F3F3]">
             {/* Learn More Button */}
             {link && (
                 <Link
@@ -35,19 +35,19 @@ export default function ExperienceCard({
                 </Link>
             )}
 
-            <h3 className="text-lg font-bold text-slate-800 mb-1">{title}</h3>
+            <h3 className="text-lg font-bold text-neutral-800 mb-1">{title}</h3>
             <div className="flex justify-between items-center mb-2">
-                <span className="text-slate-700 font-semibold">{position}</span>
-                <span className="text-slate-700 font-semibold">{dateRange}</span>
+                <span className="text-neutral-700 font-semibold">{position}</span>
+                <span className="text-neutral-700 font-semibold">{dateRange}</span>
             </div>
-            <p className="text-slate-600 mb-4 text-sm leading-relaxed">
+            <p className="text-neutral-600 mb-4 text-sm leading-relaxed">
                 {description}
             </p>
             <div className="flex flex-wrap gap-2">
                 {technologies.map((tech) => (
                     <span
                         key={tech}
-                        className="bg-transparent text-slate-600 px-3 py-1 rounded-full text-xs font-semibold border border-slate-400"
+                        className="bg-transparent text-neutral-600 px-3 py-1 rounded-full text-xs font-semibold border border-neutral-400"
                     >
                         {tech}
                     </span>

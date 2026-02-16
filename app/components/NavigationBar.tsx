@@ -68,7 +68,7 @@ function NavIcon({
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: 10 }}
                         transition={{ duration: 0.15 }}
-                        className="absolute -top-10 whitespace-nowrap bg-slate-800 text-white text-xs px-3 py-1.5 rounded-md"
+                        className="absolute -top-10 whitespace-nowrap bg-neutral-800 text-white text-xs px-3 py-1.5 rounded-md"
                     >
                         {item.title}
                     </motion.div>
@@ -81,7 +81,7 @@ function NavIcon({
                 target={item.external ? "_blank" : undefined}
                 rel={item.external ? "noopener noreferrer" : undefined}
                 style={{ width, height: width }}
-                className="rounded-full flex items-center justify-center bg-white/50 border border-white text-slate-600"
+                className="rounded-full flex items-center justify-center bg-white/50 border border-white text-neutral-600"
                 onMouseEnter={() => setIsHovered(true)}
                 onMouseLeave={() => setIsHovered(false)}
             >

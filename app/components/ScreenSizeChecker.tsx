@@ -25,11 +25,11 @@ export default function ScreenSizeChecker() {
 
     return (
         <div className="fixed inset-0 z-[9999] bg-[#F1F5F9] flex flex-col items-center justify-center px-6 text-center">
-            <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mb-6 shadow-sm border border-slate-200">
-                <FiSmartphone className="text-slate-400 text-3xl" />
+            <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mb-6 shadow-sm border border-neutral-200">
+                <FiSmartphone className="text-neutral-400 text-3xl" />
             </div>
-            <h1 className="text-2xl font-bold text-slate-800 mb-3">Screen Too Small</h1>
-            <p className="text-slate-600 max-w-xs leading-relaxed">
+            <h1 className="text-2xl font-bold text-neutral-800 mb-3">Screen Too Small</h1>
+            <p className="text-neutral-600 max-w-xs leading-relaxed">
                 This portfolio is best viewed on a device with a width of at least 300px.
             </p>
         </div>
