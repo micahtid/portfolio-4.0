@@ -2,8 +2,10 @@ import { FiCode, FiArrowUpRight } from "react-icons/fi";
 import Hero from "./components/Hero";
 import ExperienceCard from "./components/ExperienceCard";
 import ExperimentCard from "./components/ExperimentCard";
+import BlogCard from "./components/BlogCard";
 import ContactForm from "./components/ContactForm";
 import NavigationBar from "./components/NavigationBar";
+import Link from "next/link";
 
 const experiences = [
   /*
@@ -62,6 +64,23 @@ const experiments = [
   */
 ];
 
+const blogPosts = [
+  {
+    title: "Building a Minimalist Portfolio with Next.js",
+    date: "October 24, 2024",
+    excerpt: "Exploring the intersection of design and code, and why simplicity is the ultimate sophistication in personal branding.",
+    link: "/blog/minimalist-portfolio",
+    category: "Design & Engineering",
+  },
+  {
+    title: "The Art of the Side Project",
+    date: "September 12, 2024",
+    excerpt: "How building small, focused experiments can accelerate your growth as a software engineer and designer.",
+    link: "/blog/art-of-side-project",
+    category: "Philosophy",
+  },
+];
+
 export default function Home() {
   // Split experiments for masonry layout
   const leftColumnExperiments = experiments.filter((_, i) => i % 2 === 0);
@@ -90,19 +109,18 @@ export default function Home() {
 
         {/* Experiments Section */}
         <section className="mb-12 sm:mb-20">
-          <h2 className="text-2xl font-bold text-neutral-800 mb-2">Experiments</h2>
-          <p className="text-neutral-600 mb-6">
-            A few selected projects! View all{" "}
+          <div className="flex justify-between items-center mb-6">
+            <h2 className="text-2xl font-bold text-neutral-800">Experiments</h2>
             <a
               href="https://github.com/micahtid"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center text-neutral-900 decoration-neutral-300 underline underline-offset-4 hover:decoration-neutral-500 transition-colors"
+              className="inline-flex items-center text-neutral-900 decoration-neutral-300 underline underline-offset-4 hover:decoration-neutral-500 transition-colors text-sm font-medium"
             >
               <FiArrowUpRight className="mr-0.5 w-4 h-4 inline-block" />
-              here
-            </a>.
-          </p>
+              View all
+            </a>
+          </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
             {/* Left Column */}
             <div className="flex flex-col gap-8">
@@ -116,6 +134,30 @@ export default function Home() {
                 <ExperimentCard key={exp.title} {...exp} />
               ))}
             </div>
+          </div>
+        </section>
+
+        {/* Blog Section */}
+        <section className="mb-12 sm:mb-20">
+          <div className="flex justify-between items-center mb-6">
+            <h2 className="text-2xl font-bold text-neutral-800">Blog</h2>
+            <Link
+              href="/blog"
+              className="inline-flex items-center text-neutral-900 decoration-neutral-300 underline underline-offset-4 hover:decoration-neutral-500 transition-colors text-sm font-medium"
+            >
+              <FiArrowUpRight className="mr-0.5 w-4 h-4 inline-block" />
+              View all
+            </Link>
+          </div>
+          <div className="space-y-8">
+            {blogPosts.map((post, index) => (
+              <div key={post.title}>
+                <BlogCard {...post} />
+                {index < blogPosts.length - 1 && (
+                  <div className="mt-8 border-t border-neutral-100" />
+                )}
+              </div>
+            ))}
           </div>
         </section>
 
