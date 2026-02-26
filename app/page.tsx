@@ -4,6 +4,7 @@ import ExperienceCard from "./components/ExperienceCard";
 import ExperimentCard from "./components/ExperimentCard";
 import BlogCard from "./components/BlogCard";
 import ContactForm from "./components/ContactForm";
+import ThemeToggle from "./components/ThemeToggle";
 
 import Link from "next/link";
 
@@ -65,7 +66,10 @@ export default function Home() {
     <div>
       {/* Hero - fills viewport, content slightly above center */}
       <div className="h-screen flex items-center justify-center sm:-mt-12">
-        <main className="mx-auto max-w-[680px] px-4 sm:px-6 w-full">
+        <main className="mx-auto max-w-[680px] px-4 sm:px-6 w-full relative">
+          <div className="absolute -top-12 right-0">
+            <ThemeToggle />
+          </div>
           <Hero
             imageSrc="/profile.jpg"
             name="Micah Tidball"
@@ -79,8 +83,8 @@ export default function Home() {
         {/* Experience Section */}
         <section className="mb-12 sm:mb-20">
           <div className="flex items-center justify-between mb-6">
-            <h2 className="text-lg font-bold text-neutral-800 shrink-0">Work Experience</h2>
-            <div className="h-px bg-neutral-200 grow ml-4" />
+            <h2 className="text-lg font-bold text-neutral-800 dark:text-neutral-200 shrink-0">Work Experience</h2>
+            <div className="h-px bg-neutral-200 dark:bg-neutral-800 grow ml-4" />
           </div>
           <div>
             {experiences.map((exp) => (
@@ -92,13 +96,13 @@ export default function Home() {
         {/* Experiments Section */}
         <section className="mb-12 sm:mb-20">
           <div className="flex items-center justify-between mb-6">
-            <h2 className="text-lg font-bold text-neutral-800 shrink-0">Experiments</h2>
-            <div className="h-px bg-neutral-200 grow mx-4" />
+            <h2 className="text-lg font-bold text-neutral-800 dark:text-neutral-200 shrink-0">Experiments</h2>
+            <div className="h-px bg-neutral-200 dark:bg-neutral-800 grow mx-4" />
             <a
               href="https://github.com/micahtid"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center text-neutral-900 decoration-neutral-300 underline underline-offset-4 hover:decoration-neutral-500 transition-colors text-sm font-medium shrink-0"
+              className="inline-flex items-center text-neutral-900 dark:text-neutral-100 decoration-neutral-300 dark:decoration-neutral-600 underline underline-offset-4 hover:decoration-neutral-500 dark:hover:decoration-neutral-400 transition-colors text-sm font-medium shrink-0"
             >
               <FiArrowUpRight className="mr-0.5 w-4 h-4 inline-block" />
               View all
@@ -114,11 +118,11 @@ export default function Home() {
         {/* Blog Section */}
         <section className="mb-12 sm:mb-20">
           <div className="flex items-center justify-between mb-6">
-            <h2 className="text-lg font-bold text-neutral-800 shrink-0">Blog</h2>
-            <div className="h-px bg-neutral-200 grow mx-4" />
+            <h2 className="text-lg font-bold text-neutral-800 dark:text-neutral-200 shrink-0">Blog</h2>
+            <div className="h-px bg-neutral-200 dark:bg-neutral-800 grow mx-4" />
             <Link
               href="/blog"
-              className="inline-flex items-center text-neutral-900 decoration-neutral-300 underline underline-offset-4 hover:decoration-neutral-500 transition-colors text-sm font-medium shrink-0"
+              className="inline-flex items-center text-neutral-900 dark:text-neutral-100 decoration-neutral-300 dark:decoration-neutral-600 underline underline-offset-4 hover:decoration-neutral-500 dark:hover:decoration-neutral-400 transition-colors text-sm font-medium shrink-0"
             >
               <FiArrowUpRight className="mr-0.5 w-4 h-4 inline-block" />
               View all

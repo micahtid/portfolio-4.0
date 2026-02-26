@@ -13,15 +13,15 @@ export default function ExperimentCard({
     websiteLink,
 }: ExperimentCardProps) {
     return (
-        <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center py-1.5 -mx-2 px-2 rounded-lg hover:bg-neutral-50 transition-colors">
-            <span className="text-neutral-800 font-medium">{title}</span>
+        <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center py-1.5 -mx-2 px-2 rounded-lg hover:bg-neutral-50 dark:hover:bg-neutral-800/50 transition-colors">
+            <span className="text-neutral-800 dark:text-neutral-200 font-medium">{title}</span>
             <div className="flex items-center gap-3">
                 {githubLink && (
                     <a
                         href={githubLink}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-neutral-400 hover:text-neutral-800 transition-colors"
+                        className="text-neutral-400 dark:text-neutral-500 hover:text-neutral-800 dark:hover:text-neutral-200 transition-colors"
                     >
                         <FaGithub size={16} />
                     </a>
@@ -31,7 +31,7 @@ export default function ExperimentCard({
                         href={websiteLink}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-neutral-400 hover:text-neutral-800 transition-colors"
+                        className="text-neutral-400 dark:text-neutral-500 hover:text-neutral-800 dark:hover:text-neutral-200 transition-colors"
                     >
                         <FaGlobe size={16} />
                     </a>

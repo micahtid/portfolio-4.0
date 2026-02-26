@@ -15,8 +15,8 @@ export default function ExperienceCard({
 
     const content = (
         <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center py-1.5 group">
-            <span className="text-neutral-800 font-medium">{label}</span>
-            <span className="text-neutral-500 text-sm shrink-0">{dateRange}</span>
+            <span className="text-neutral-800 dark:text-neutral-200 font-medium">{label}</span>
+            <span className="text-neutral-500 dark:text-neutral-400 text-sm shrink-0">{dateRange}</span>
         </div>
     );
 
@@ -26,7 +26,7 @@ export default function ExperienceCard({
                 href={link}
                 target={isExternal ? "_blank" : undefined}
                 rel={isExternal ? "noopener noreferrer" : undefined}
-                className="block hover:bg-neutral-50 -mx-2 px-2 rounded-lg transition-colors"
+                className="block hover:bg-neutral-50 dark:hover:bg-neutral-800/50 -mx-2 px-2 rounded-lg transition-colors"
             >
                 {content}
             </Link>
