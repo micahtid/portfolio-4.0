@@ -14,9 +14,9 @@ export default function ExperienceCard({
     const isExternal = link?.startsWith("http");
 
     const content = (
-        <div className="flex justify-between items-center py-1.5 group whitespace-nowrap">
+        <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center py-1.5 group">
             <span className="text-neutral-800 font-medium">{label}</span>
-            <span className="text-neutral-500 text-sm">{dateRange}</span>
+            <span className="text-neutral-500 text-sm shrink-0">{dateRange}</span>
         </div>
     );
 

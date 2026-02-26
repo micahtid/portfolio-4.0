@@ -13,7 +13,7 @@ export default function ExperimentCard({
     websiteLink,
 }: ExperimentCardProps) {
     return (
-        <div className="flex justify-between items-center py-1.5 -mx-2 px-2 rounded-lg hover:bg-neutral-50 transition-colors whitespace-nowrap">
+        <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center py-1.5 -mx-2 px-2 rounded-lg hover:bg-neutral-50 transition-colors">
             <span className="text-neutral-800 font-medium">{title}</span>
             <div className="flex items-center gap-3">
                 {githubLink && (
