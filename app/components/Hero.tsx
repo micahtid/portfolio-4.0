@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { ReactNode } from "react";
 import { FiArrowUpRight } from "react-icons/fi";
+import SocialLinks from "./SocialLinks";
 
 interface HeroProps {
     imageSrc: string;
@@ -11,25 +12,25 @@ interface HeroProps {
 export default function Hero({ imageSrc, name, description }: HeroProps) {
     return (
         <section className="flex flex-col items-start text-left mb-12 sm:mb-20">
-            {/* Profile Image */}
-            <div className="w-20 h-20 sm:w-28 sm:h-28 rounded-full overflow-hidden mb-4 sm:mb-6 border-4 border-gray-300/50">
-                <Image
-                    src={imageSrc}
-                    alt={name}
-                    width={112}
-                    height={112}
-                    className="w-full h-full object-cover"
-                    priority
-                />
+            {/* Name with Profile Image */}
+            <div className="flex items-end gap-3 sm:gap-4 mb-2 sm:mb-3">
+                <div className="w-14 h-14 sm:w-[88px] sm:h-[88px] rounded-xl overflow-hidden border-4 border-gray-300/50 shrink-0">
+                    <Image
+                        src={imageSrc}
+                        alt={name}
+                        width={96}
+                        height={96}
+                        className="w-full h-full object-cover"
+                        priority
+                    />
+                </div>
+                <h1 className="text-lg sm:text-xl font-bold text-neutral-800">
+                    Hey, I&apos;m {name}
+                </h1>
             </div>
 
-            {/* Name */}
-            <h1 className="text-2xl sm:text-4xl font-semibold text-neutral-800 mb-2 sm:mb-3">
-                Hey, I&apos;m {name}
-            </h1>
-
             {/* Description */}
-            <p className="max-w-2xl text-base sm:text-lg text-neutral-600 leading-relaxed">
+            <p className="max-w-2xl text-base text-neutral-600 leading-relaxed">
                 I&apos;m a freshman at the{" "}
                 <a
                     href="https://www.unl.edu"
@@ -51,6 +52,8 @@ export default function Hero({ imageSrc, name, description }: HeroProps) {
                     blog
                 </a>!
             </p>
+
+            <SocialLinks />
         </section>
     );
 }
