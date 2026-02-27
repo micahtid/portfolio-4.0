@@ -68,7 +68,7 @@ function NavIcon({
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: 10 }}
                         transition={{ duration: 0.15 }}
-                        className="absolute -top-10 whitespace-nowrap bg-neutral-800 text-white text-xs px-3 py-1.5 rounded-md"
+                        className="absolute -top-10 whitespace-nowrap bg-neutral-800 dark:bg-neutral-200 text-white dark:text-neutral-900 text-xs px-3 py-1.5 rounded-md"
                     >
                         {item.title}
                     </motion.div>
@@ -81,7 +81,7 @@ function NavIcon({
                 target={item.external ? "_blank" : undefined}
                 rel={item.external ? "noopener noreferrer" : undefined}
                 style={{ width, height: width }}
-                className="rounded-full flex items-center justify-center bg-white/50 border border-white text-neutral-600"
+                className="rounded-full flex items-center justify-center bg-white/50 dark:bg-neutral-800/50 border border-white dark:border-neutral-700 text-neutral-600 dark:text-neutral-400"
                 onMouseEnter={() => setIsHovered(true)}
                 onMouseLeave={() => setIsHovered(false)}
             >
@@ -100,7 +100,7 @@ export default function NavigationBar() {
                 onMouseMove={(e) => mouseX.set(e.pageX)}
                 onMouseLeave={() => mouseX.set(Infinity)}
                 style={{ backdropFilter: 'blur(4px)' }}
-                className="bg-black/5 border border-gray-500/10 rounded-full px-3 sm:px-4 h-[72px] flex items-end pb-3 gap-2 sm:gap-3 overflow-visible"
+                className="bg-black/5 dark:bg-white/10 border border-gray-500/10 dark:border-white/10 rounded-full px-3 sm:px-4 h-[72px] flex items-end pb-3 gap-2 sm:gap-3 overflow-visible"
             >
                 {navItems.map((item) => (
                     <NavIcon key={item.title} item={item} mouseX={mouseX} />
