@@ -1,4 +1,4 @@
-import { FiCode, FiZap } from "react-icons/fi";
+import { FiCode, FiArrowUpRight } from "react-icons/fi";
 import Hero from "./components/Hero";
 import ExperienceCard from "./components/ExperienceCard";
 import ExperimentCard from "./components/ExperimentCard";
@@ -6,64 +6,81 @@ import ContactForm from "./components/ContactForm";
 import NavigationBar from "./components/NavigationBar";
 
 const experiences = [
+  /*
   {
     title: "Moneiva",
-    position: "Co-Founder & CTO",
-    dateRange: "2024 - Present",
-    description:
-      "Building a fintech platform to help students manage finances and build credit. Led development of the full-stack application from concept to MVP.",
-    technologies: ["React", "Node.js", "PostgreSQL", "TypeScript", "AWS"],
+    position: "Software Engineer Intern",
+    dateRange: "May 2026 - August 2026",
+    description: "Coming Soon!",
+    technologies: ["React", "Dart", "AWS Services", "AI Platforms"],
+    link: "/experience/moneiva",
   },
+  */
   {
     title: "FindU",
     position: "Software Engineer",
-    dateRange: "2023 - 2024",
-    description:
-      "Developed features for a social discovery platform connecting students with similar interests. Implemented real-time chat and matching algorithms.",
-    technologies: ["Next.js", "Firebase", "Tailwind CSS", "WebSocket"],
+    dateRange: "August 2025 - Present",
+    description: "Contributing production software across the mobile and web stack. Led the development of the scholarship swipe interface and designed the core matching algorithm to connect students with the right opportunities.",
+    technologies: ["Swift", "React", "Supabase"],
+    link: "/experience/findu",
   },
 ];
 
 const experiments = [
   {
-    title: "Me2",
-    description:
-      "A real-time chat application for students to connect and collaborate on projects.",
-    gifSrc: "/gifs/me2.gif",
+    title: "Glyph",
+    description: "Coming soon!",
+    placeholderIcon: <FiCode className="text-neutral-500 text-4xl" />,
+  },
+  {
+    title: "SnipCode",
+    description: "Coming soon!",
+    placeholderIcon: <FiCode className="text-neutral-500 text-4xl" />,
+  },
+  {
+    title: "Restoring Rainbows",
+    description: "An organizational website for a global youth-led NPO, featuring an admin dashboard for centralized data management.",
+    gifSrc: "/gifs/restoring_rainbows.gif",
+    githubLink: "https://github.com/micahtid/restoring-rainbows",
+    websiteLink: "https://www.restoringrainbows.org/",
   },
   {
     title: "Mira",
     description:
-      "An AI-powered personal assistant for productivity and task management.",
+      "A volunteer platform for youth-led organizations to create and track internship and volunteer opportunities.",
     gifSrc: "/gifs/mira.gif",
+    githubLink: "https://github.com/micahtid/mira",
   },
+  /*
   {
-    title: "Coming Soon",
-    description: "Exciting new project in development. Stay tuned!",
-    placeholderIcon: <FiCode className="text-slate-500 text-4xl" />,
+    title: "Me2",
+    description:
+      "A chat application connecting students with similar interests and shared circumstances.",
+    gifSrc: "/gifs/me2.gif",
+    githubLink: "https://github.com/micahtid/me2",
   },
-  {
-    title: "Coming Soon",
-    description: "Another project in the works. Check back later!",
-    placeholderIcon: <FiZap className="text-slate-500 text-4xl" />,
-  },
+  */
 ];
 
 export default function Home() {
+  // Split experiments for masonry layout
+  const leftColumnExperiments = experiments.filter((_, i) => i % 2 === 0);
+  const rightColumnExperiments = experiments.filter((_, i) => i % 2 !== 0);
+
   return (
     <div className="min-h-screen">
       {/* Main Content Container */}
-      <main className="mx-auto max-w-[800px] px-6 pt-20">
+      <main className="mx-auto max-w-[800px] px-4 sm:px-6 pt-12 sm:pt-20">
         {/* Hero Section */}
         <Hero
           imageSrc="/profile.jpg"
           name="Micah Tidball"
-          description="I'm a freshman at the Raikes School @ University of Nebraska Lincoln studying Computer Science and Data. I build random full-stack applications in my free time."
+          description="I'm a freshman at the University of Nebraska-Lincoln studying Computer Science and Data. I ship full-stack applications in my free time. Check out my blog!"
         />
 
         {/* Experience Section */}
-        <section className="mb-16">
-          <h2 className="text-3xl font-bold text-slate-800 mb-6">Experience</h2>
+        <section className="mb-12 sm:mb-20">
+          <h2 className="text-2xl font-bold text-neutral-800 mb-6">Work Experience</h2>
           <div className="space-y-6">
             {experiences.map((exp) => (
               <ExperienceCard key={exp.title} {...exp} />
@@ -72,12 +89,33 @@ export default function Home() {
         </section>
 
         {/* Experiments Section */}
-        <section className="mb-16">
-          <h2 className="text-3xl font-bold text-slate-800 mb-6">Experiments</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {experiments.map((exp, index) => (
-              <ExperimentCard key={index} {...exp} />
-            ))}
+        <section className="mb-12 sm:mb-20">
+          <h2 className="text-2xl font-bold text-neutral-800 mb-2">Experiments</h2>
+          <p className="text-neutral-600 mb-6">
+            A few selected projects! View all{" "}
+            <a
+              href="https://github.com/micahtid"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center text-neutral-900 decoration-neutral-300 underline underline-offset-4 hover:decoration-neutral-500 transition-colors"
+            >
+              <FiArrowUpRight className="mr-0.5 w-4 h-4 inline-block" />
+              here
+            </a>.
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+            {/* Left Column */}
+            <div className="flex flex-col gap-8">
+              {leftColumnExperiments.map((exp) => (
+                <ExperimentCard key={exp.title} {...exp} />
+              ))}
+            </div>
+            {/* Right Column */}
+            <div className="flex flex-col gap-8">
+              {rightColumnExperiments.map((exp) => (
+                <ExperimentCard key={exp.title} {...exp} />
+              ))}
+            </div>
           </div>
         </section>
 
