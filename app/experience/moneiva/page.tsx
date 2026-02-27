@@ -1,6 +1,6 @@
 import Link from "next/link";
-import { FiArrowRight } from "react-icons/fi";
-import NavigationBar from "../../components/NavigationBar";
+import { FiArrowLeft } from "react-icons/fi";
+
 
 export default function MoneivaPage() {
     return (
@@ -10,8 +10,8 @@ export default function MoneivaPage() {
                     href="/"
                     className="inline-flex items-center text-neutral-500 dark:text-neutral-400 hover:text-neutral-800 dark:hover:text-neutral-200 transition-colors mb-8"
                 >
+                    <FiArrowLeft className="mr-1.5" />
                     Back to Home
-                    <FiArrowRight className="ml-1.5" />
                 </Link>
 
                 <article className="prose prose-neutral max-w-none">
@@ -19,7 +19,6 @@ export default function MoneivaPage() {
                     <p className="text-xl text-neutral-600 dark:text-neutral-400">Coming Soon!</p>
                 </article>
             </main>
-            <NavigationBar />
         </div>
     );
 }
