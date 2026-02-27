@@ -17,14 +17,14 @@ export default function ExperienceCard({
     const isExternal = link?.startsWith("http");
 
     const content = (
-        <div className="flex items-center py-1.5 group">
+        <div className="flex items-start sm:items-center py-1.5 group">
             {imageSrc && (
                 <Image
                     src={imageSrc}
                     alt=""
-                    width={28}
-                    height={28}
-                    className="rounded-md mr-3 shrink-0 object-contain"
+                    width={24}
+                    height={24}
+                    className="rounded mr-3 shrink-0 object-contain border border-gray-300/50"
                 />
             )}
             <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center flex-1 min-w-0">
