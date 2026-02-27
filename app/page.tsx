@@ -45,18 +45,11 @@ const experiments = [
 
 const blogPosts = [
   {
-    title: "Building a Minimalist Portfolio with Next.js",
-    date: "October 24, 2024",
-    excerpt: "Exploring the intersection of design and code, and why simplicity is the ultimate sophistication in personal branding.",
-    link: "/blog/minimalist-portfolio",
-    category: "Design & Engineering",
-  },
-  {
-    title: "The Art of the Side Project",
-    date: "September 12, 2024",
-    excerpt: "How building small, focused experiments can accelerate your growth as a software engineer and designer.",
-    link: "/blog/art-of-side-project",
-    category: "Philosophy",
+    title: "I Spent Three Months Building Something Nobody Wanted",
+    date: "February 2026",
+    excerpt: "The story of Glyph, an AI-powered carousel generator for nonprofits — and why it never shipped.",
+    link: "/blog/glyph",
+    category: "Lessons Learned",
   },
 ];
 
