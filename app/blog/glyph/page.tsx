@@ -16,7 +16,7 @@ export default function GlyphBlogPost() {
         <div className="min-h-screen">
             <main className="mx-auto max-w-[680px] px-4 sm:px-6 pt-12 sm:pt-20 pb-32 relative">
                 <aside className="hidden lg:block absolute -left-44 top-0 bottom-0 w-36">
-                    <nav className="sticky top-1/2 -translate-y-1/2">
+                    <nav className="sticky top-[38%] -translate-y-1/2">
                         <TableOfContents sections={sections} />
                     </nav>
                 </aside>

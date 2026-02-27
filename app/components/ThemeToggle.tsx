@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { FiSun, FiMoon } from "react-icons/fi";
+import { BsSunFill, BsMoonFill } from "react-icons/bs";
 
 export default function ThemeToggle() {
     const [dark, setDark] = useState(false);
@@ -24,10 +24,10 @@ export default function ThemeToggle() {
     return (
         <button
             onClick={toggle}
-            className="w-9 h-9 flex items-center justify-center rounded-full border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-800 text-neutral-500 dark:text-neutral-400 hover:text-neutral-800 dark:hover:text-neutral-200 transition-colors cursor-pointer"
+            className="w-9 h-9 flex items-center justify-center text-neutral-500 dark:text-neutral-400 hover:text-neutral-800 dark:hover:text-neutral-200 transition-colors cursor-pointer"
             aria-label="Toggle dark mode"
         >
-            {dark ? <FiSun size={16} /> : <FiMoon size={16} />}
+            {dark ? <BsSunFill size={16} /> : <BsMoonFill size={16} />}
         </button>
     );
 }

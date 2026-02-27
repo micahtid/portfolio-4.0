@@ -13,11 +13,13 @@ const experiences = [
     label: "Incoming SWE Intern @ Moneiva",
     dateRange: "Summer 2026",
     link: "/experience/moneiva",
+    imageSrc: "/moneiva.png",
   },
   {
     label: "SWE @ FindU",
     dateRange: "Aug 2025 - Present",
     link: "/experience/findu",
+    imageSrc: "/findu.png",
   },
 ];
 
@@ -58,9 +60,9 @@ export default function Home() {
   return (
     <div>
       {/* Hero - fills viewport, content slightly above center */}
-      <div className="h-screen flex items-center justify-center sm:-mt-12">
-        <main className="mx-auto max-w-[680px] px-4 sm:px-6 w-full relative">
-          <div className="absolute -top-12 right-0">
+      <div className="min-h-[85vh] sm:h-screen flex items-center justify-center pt-12 sm:pt-0 sm:-mt-12">
+        <main className="mx-auto max-w-[680px] px-6 sm:px-6 w-full relative">
+          <div className="absolute -top-12 right-0 mr-1 sm:mr-0">
             <ThemeToggle />
           </div>
           <Hero
@@ -72,9 +74,9 @@ export default function Home() {
       </div>
 
       {/* Rest of content - peeks above the fold */}
-      <main className="mx-auto max-w-[680px] px-4 sm:px-6 -mt-24 sm:-mt-32">
+      <main className="mx-auto max-w-[680px] px-6 sm:px-6 -mt-16 sm:-mt-32">
         {/* Experience Section */}
-        <section className="mb-12 sm:mb-20">
+        <section className="mb-8 sm:mb-20">
           <div className="flex items-center justify-between mb-6">
             <h2 className="text-lg font-bold text-neutral-800 dark:text-neutral-200 shrink-0">Work Experience</h2>
             <div className="h-px bg-neutral-200 dark:bg-neutral-800 grow ml-4" />
@@ -87,7 +89,7 @@ export default function Home() {
         </section>
 
         {/* Experiments Section */}
-        <section className="mb-12 sm:mb-20">
+        <section className="mb-8 sm:mb-20">
           <div className="flex items-center justify-between mb-6">
             <h2 className="text-lg font-bold text-neutral-800 dark:text-neutral-200 shrink-0">Experiments</h2>
             <div className="h-px bg-neutral-200 dark:bg-neutral-800 grow mx-4" />
@@ -109,7 +111,7 @@ export default function Home() {
         </section>
 
         {/* Blog Section */}
-        <section className="mb-12 sm:mb-20">
+        <section className="mb-8 sm:mb-20">
           <div className="flex items-center justify-between mb-6">
             <h2 className="text-lg font-bold text-neutral-800 dark:text-neutral-200 shrink-0">Blog</h2>
             <div className="h-px bg-neutral-200 dark:bg-neutral-800 grow mx-4" />

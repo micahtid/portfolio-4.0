@@ -3,13 +3,11 @@
 import { useState } from "react";
 import { FiPaperclip } from "react-icons/fi";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
-import { PiCoffeeBeanFill } from "react-icons/pi";
 
 const links = [
     { href: "https://www.linkedin.com/in/micah-tidball-a1b28231b/", icon: <FaLinkedin size={20} />, label: "LinkedIn" },
     { href: "https://github.com/micahtid", icon: <FaGithub size={20} />, label: "GitHub" },
     { href: "/resume.pdf", icon: <FiPaperclip size={20} />, label: "Resume" },
-    { href: "https://calendly.com/tidballmicah/30min", icon: <PiCoffeeBeanFill size={20} />, label: "Coffee Chat" },
 ];
 
 function SocialIcon({ href, icon, label }: { href: string; icon: React.ReactNode; label: string }) {
